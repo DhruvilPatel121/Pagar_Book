@@ -1,0 +1,38 @@
+[
+    {
+      "id": "1018",
+      "name": "AHMED",
+      "image": "/path/to/image",
+      "type": "Contractual (monthly)",
+      "department": "Production",
+      "shift": "PRODUCTION SHIFT",
+      "email": "ahmed@example.com",
+      "mobileNumber": "1234567890",
+      "gender": "male",
+      "location": "Mumbai"
+    },
+    {
+      "id": "1023",
+      "name": "AJAYBHAI CHAUHAN",
+      "image": "/path/to/image",
+      "type": "Contractual (daily)",
+      "department": "Sales",
+      "shift": "SALES SHIFT",
+      "email": "ajay@example.com",
+      "mobileNumber": "9876543210",
+      "gender": "male",
+      "location": "Delhi"
+    },
+    {
+      "id": "1024",
+      "name": "ALIM",
+      "image": "/path/to/image",
+      "type": "Work Basis",
+      "department": "Unassigned",
+      "shift": "No Shift",
+      "email": "alim@example.com",
+      "mobileNumber": "8765432109",
+      "gender": "male",
+      "location": "Kolkata"
+    }
+  ]
