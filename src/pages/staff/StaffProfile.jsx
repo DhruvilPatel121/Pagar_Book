@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import ProfileSidebar from './components/ProfileSidebar';
-import ProfileInfo from './components/ProfileInfo';
+// import ProfileInfo from './components/ProfileInfo';
 
 const StaffProfile = () => {
   const { id } = useParams();
@@ -59,7 +59,7 @@ const StaffProfile = () => {
 
 
   return (
-    <div className="h-[730px] flex flex-col bg-[#f8fafc]">
+    <div className="h-[730px] w-[1400px] flex flex-col bg-[#f8fafc]">
       <div className="max-w-[1440px] w-full mx-auto p-4 flex flex-col h-full">
         {/* Fixed Header */}
         <div className="bg-white rounded-xl shadow-sm mb-6">
@@ -86,9 +86,10 @@ const StaffProfile = () => {
           </div>
           
           {/* Scrollable Content */}
-          <div className="flex-1 min-h-0">
+          <div className="flex-1 min-h-0 w-[500px]">
             <div className="h-full overflow-y-auto pr-2">
-              <ProfileInfo staffData={staffData} onUpdate={handleUpdateStaff} />
+              {/* <ProfileInfo staffData={staffData} onUpdate={handleUpdateStaff} /> */}
+              <Outlet context={{ staffData, setStaffData }}/>
             </div>
           </div>
         </div>

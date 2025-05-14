@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { BsPersonVcard } from 'react-icons/bs';
 import { MdEmojiPeople } from 'react-icons/md';
 import { TbReportMoney } from 'react-icons/tb';
@@ -8,6 +8,9 @@ import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 import { GiPayMoney } from 'react-icons/gi';
 
 const ProfileSidebar = () => {
+
+   const { id } = useParams(); // Get the staff ID from URL
+
   const menuItems = [
     { icon: <BsPersonVcard className="text-xl" />, label: 'Profile', path: 'personal' },
     { icon: <MdEmojiPeople className="text-xl" />, label: 'Attendance', path: 'attendance' },

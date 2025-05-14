@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { FiEdit2 } from 'react-icons/fi';
 import EditProfileForm from './edit/EditProfileForm';
 import EditGeneralForm from './edit/EditGeneralForm';
 
-const ProfileInfo = ({ staffData, onUpdate }) => {
+const ProfileInfo = () => {
 
+    const { staffData, setStaffData } = useOutletContext();
     const [editMode, setEditMode] = useState(null); // 'profile' or 'general'
 
     const handleSave = (updatedData) => {
-    onUpdate(updatedData);
+    setStaffData(prev => ({ ...prev, ...updatedData }));
     setEditMode(null);
   };
 
