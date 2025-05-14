@@ -8,6 +8,8 @@ import Attendance from './pages/Attendance';
 import Payroll from './pages/Payroll';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import Fine from './pages/Fine';
+import Overtime from './pages/Overtime';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
       {
         path: '/attendance',
         element: <Attendance />,
+      },
+      {
+        path: '/fine',
+        element: <Fine />,
+      },
+      {
+        path: '/overtime',
+        element: <Overtime />, 
       },
       {
         path: '/payroll',
