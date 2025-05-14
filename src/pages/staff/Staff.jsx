@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { FaFilter } from 'react-icons/fa';
 import { IoPersonAddSharp } from 'react-icons/io5';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 const Staff = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStaff, setSelectedStaff] = useState([]);
+  const navigate = useNavigate();
 
   const staffList = [
     { id: '1018', name: 'AHMED', department: 'Production' },
@@ -16,7 +18,7 @@ const Staff = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="h-[730px] bg-white">
       <div className="max-w-[1440px] mx-auto p-4 sm:p-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
@@ -112,7 +114,12 @@ const Staff = () => {
                     }}
                   />
                   <div className="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0"></div>
-                  <span className="font-medium text-sm">{staff.name}</span>
+                  <span 
+                    className="font-medium text-sm cursor-pointer hover:text-blue-600"
+                    onClick={() => navigate(`/staff/${staff.id}/personal`)}
+                  >
+                    {staff.name}
+                  </span>
                 </div>
                 <div className="flex items-center gap-6">
                   <span className="text-sm text-gray-500">{staff.id}</span>
