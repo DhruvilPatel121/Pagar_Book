@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Layout from './layout/Layout';
 
 // Import page components
@@ -13,6 +13,7 @@ import Overtime from './pages/Overtime';
 
 import StaffProfile from './pages/staff/StaffProfile';
 import ProfileInfo from './pages/staff/components/ProfileInfo';
+import YTDStatement from './pages/staff/components/YTDStatement';
 
 
 export const router = createBrowserRouter([
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
         element: <StaffProfile />,
         children: [
           {
+            index: true,
+            element: <Navigate to="personal" replace />,
+          },
+          {
             path: 'personal',
             element: <ProfileInfo />,
           },
@@ -46,7 +51,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'ytd-statement',
-            element: <div>YTD Statement Component</div>,
+            element: <YTDStatement />,
           },
           {
             path: 'salary-structure',
