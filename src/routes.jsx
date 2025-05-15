@@ -40,10 +40,11 @@ export const router = createBrowserRouter([
             path: 'personal',
             element: <ProfileInfo />,
           },
-          {
-            path: 'attendance',
-            element: <div>Attendance Component</div>,
-          },
+          // {
+          //   path: 'attendance',
+          //   element: <div>Attendance Component</div>,
+          //   // element: <Attendance />,
+          // },
           {
             path: 'salary-overview',
             element: <div>Salary Overview Component</div>,
