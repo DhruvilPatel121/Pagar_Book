@@ -37,22 +37,22 @@ const ProfileInfo = () => {
 
   const InfoSection = ({ title, fields, section }) => (
     <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-      <div className="flex justify-between items-center pb-6 border-b border-gray-100">
-        <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+      <div className="flex justify-between items-center pb-4 border-b border-gray-100">
+        <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
         <button className="text-blue-600 hover:text-blue-700 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200" 
           onClick={() => setEditMode(section)}>
           <FiEdit2 className="w-4 h-4" />
           <span className="text-sm font-medium">Edit</span>
         </button>
       </div>
-      <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 mt-6">
+      <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 mt-6">
         {fields.map((field, index) => (
           <div key={index} className="space-y-2">
             <p className="text-sm text-gray-500 flex items-center gap-1">
               {field.label}
               {field.required && <span className="text-red-500 text-xs">*</span>}
             </p>
-            <p className={`font-medium ${field.value === '-' ? 'text-gray-400' : 'text-gray-900'}`}>
+            <p className={`font-medium ${field.value === '-' ? 'text-gray-400' : 'text-gray-800'}`}>
               {field.value}
             </p>
           </div>
