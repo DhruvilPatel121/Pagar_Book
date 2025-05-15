@@ -87,12 +87,8 @@ const StaffProfile = () => {
           {/* Scrollable Content */}
           <div className="flex-1 min-h-0">
             <div className="h-full overflow-y-auto pr-2">
-<<<<<<< HEAD
-              <Outlet context={{ staffData, setStaffData }}/>
-=======
               {/* <ProfileInfo staffData={staffData} onUpdate={handleUpdateStaff} /> */}
               <Outlet context={{ staffData, setStaffData, handleUpdateStaff }}/>
->>>>>>> fab6292c2e29a49a0ab28dc9925c092237cb63aa
             </div>
           </div>
         </div>
