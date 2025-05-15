@@ -16,6 +16,7 @@ import Overtime from './pages/attendance/Overtime';
 import SalaryOverview from './pages/staff/components/SalaryOverview';
 import PayrollDetail from './pages/payroll/PayrollDetail';
 import Loans from './pages/staff/components/loan/Loans';
+import SalaryStructure from './pages/staff/components/SalaryStructure';
 
 
 export const router = createBrowserRouter([
@@ -58,7 +59,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'salary-structure',
-            element: <div>Salary Structure Component</div>,
+            element: <SalaryStructure />,
           },
           {
             path: 'loans',
