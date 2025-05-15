@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowLeft, FaSave, FaSearch } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
-import { colors, componentStyles, typography, spacing } from '../theme.js';
-import staffData from '../data/staff.json';
+import { colors, componentStyles, typography, spacing } from '../../theme.js';
+import staffData from '../../data/staff.json';
 
 function Overtime() {
     const location = useLocation();
