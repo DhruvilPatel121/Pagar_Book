@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 
-const NewLoanDialog = ({ isOpen, onClose, staffData }) => {
+const AddLoanDialog = ({ isOpen, onClose, staffData }) => {
   const [formData, setFormData] = useState({
     staff: staffData?.id || '',
     loanName: '',
@@ -177,4 +177,4 @@ const NewLoanDialog = ({ isOpen, onClose, staffData }) => {
   );
 };
 
-export default NewLoanDialog
+export default AddLoanDialog
