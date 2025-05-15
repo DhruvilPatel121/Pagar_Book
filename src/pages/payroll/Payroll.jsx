@@ -24,13 +24,13 @@ function Payroll() {
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
   const [filteredEmployees, setFilteredEmployees] = useState(mockEmployees);
-  
+
   // Replace single showCalendar with two separate state hooks
   const [isFromCalendarOpen, setFromCalendarOpen] = useState(false);
   const [isToCalendarOpen, setToCalendarOpen] = useState(false);
-  
+
   const [calendarType, setCalendarType] = useState('from');
-  
+
   const fromCalendarRef = useRef(null);
   const toCalendarRef = useRef(null);
 
@@ -44,7 +44,7 @@ function Payroll() {
         setToCalendarOpen(false);
       }
     }
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -257,12 +257,12 @@ function Payroll() {
                   </button>
                   <div className={`flex items-center ${spacing.smallGap} ${typography.normal} relative`}>
                     <span>{fromDate ? new Date(fromDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : 'Select date'}</span>
-                    <div 
+                    <div
                       onClick={() => {
                         setFromCalendarOpen(prev => !prev);
                         setToCalendarOpen(false);
                         setCalendarType('from');
-                      }} 
+                      }}
                       className={componentStyles.calendarButton}
                     >
                       <FaCalendarAlt className={colors.primary.icon} />
@@ -283,12 +283,12 @@ function Payroll() {
                   </button>
                   <div className={`flex items-center ${spacing.smallGap} ${typography.normal} relative`}>
                     <span>{toDate ? new Date(toDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : 'Select date'}</span>
-                    <div 
+                    <div
                       onClick={() => {
                         setToCalendarOpen(prev => !prev);
                         setFromCalendarOpen(false);
                         setCalendarType('to');
-                      }} 
+                      }}
                       className={componentStyles.calendarButton}
                     >
                       <FaCalendarAlt className={colors.primary.icon} />
