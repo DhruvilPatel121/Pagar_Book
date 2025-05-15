@@ -14,6 +14,7 @@ import ProfileInfo from './pages/staff/components/ProfileInfo';
 import YTDStatement from './pages/staff/components/YTDStatement';
 import Fine from './pages/attendance/Fine';
 import Overtime from './pages/attendance/Overtime';
+import SalaryOverview from './pages/staff/components/SalaryOverview';
 
 
 export const router = createBrowserRouter([
@@ -48,7 +49,7 @@ export const router = createBrowserRouter([
           // },
           {
             path: 'salary-overview',
-            element: <div>Salary Overview Component</div>,
+            element: <SalaryOverview />,
           },
           {
             path: 'ytd-statement',
