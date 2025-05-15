@@ -4,17 +4,16 @@ import Layout from './layout/Layout';
 // Import page components
 import Dashboard from './pages/Dashboard';
 import Staff from './pages/staff/Staff';
-import Attendance from './pages/Attendance';
+import Attendance from './pages/attendance/Attendance';
 import Payroll from './pages/Payroll';
 import PayrollDetail from './pages/PayrollDetail';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
-import Fine from './pages/Fine';
-import Overtime from './pages/Overtime';
-
 import StaffProfile from './pages/staff/StaffProfile';
 import ProfileInfo from './pages/staff/components/ProfileInfo';
 import YTDStatement from './pages/staff/components/YTDStatement';
+import Fine from './pages/attendance/Fine';
+import Overtime from './pages/attendance/Overtime';
 
 
 export const router = createBrowserRouter([
@@ -42,10 +41,11 @@ export const router = createBrowserRouter([
             path: 'personal',
             element: <ProfileInfo />,
           },
-          {
-            path: 'attendance',
-            element: <div>Attendance Component</div>,
-          },
+          // {
+          //   path: 'attendance',
+          //   element: <div>Attendance Component</div>,
+          //   // element: <Attendance />,
+          // },
           {
             path: 'salary-overview',
             element: <div>Salary Overview Component</div>,

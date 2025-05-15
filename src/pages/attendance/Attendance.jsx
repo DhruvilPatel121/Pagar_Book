@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { FaFileAlt, FaCog, FaChevronLeft, FaChevronRight, FaCalendarAlt, FaPlus, FaCamera, FaSearch } from 'react-icons/fa'
-import { colors, componentStyles, typography, spacing } from '../theme.js'
+import { colors, componentStyles, typography, spacing } from '../../theme.js'
 import { Link, useNavigate } from 'react-router-dom';
-import staffData from '../data/staff.json';
+import staffData from '../../data/staff.json';
 
 // Reusable status button component
 const StatusButton = ({ status, currentStatus, onClick, children }) => {

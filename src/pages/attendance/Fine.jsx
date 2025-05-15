@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowLeft,  FaSave } from 'react-icons/fa';
-import {  componentStyles, typography } from '../theme.js';
-import staffData from '../data/staff.json';
+import {  componentStyles, typography } from '../../theme.js';
+import staffData from '../../data/staff.json';
 
 function Fine() {
   const location = useLocation();
