@@ -15,6 +15,7 @@ import Fine from './pages/attendance/Fine';
 import Overtime from './pages/attendance/Overtime';
 import SalaryOverview from './pages/staff/components/SalaryOverview';
 import PayrollDetail from './pages/payroll/PayrollDetail';
+import Loans from './pages/staff/components/loan/Loans';
 
 
 export const router = createBrowserRouter([
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'loans',
-            element: <div>Loans Component</div>,
+            element: <Loans />,
           },
         ],
       },
