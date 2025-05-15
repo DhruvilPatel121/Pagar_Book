@@ -1,7 +1,6 @@
 import React, { useState }  from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import ProfileSidebar from './components/ProfileSidebar';
-// import ProfileInfo from './components/ProfileInfo';
 
 const StaffProfile = () => {
   const { id } = useParams();
@@ -54,23 +53,22 @@ const StaffProfile = () => {
     // Add other staff members here
   };
 
-  // const staffData = staffList[id] || staffList['1018']; // Fallback to AHMED if ID not found
   const [staffData, setStaffData] = useState(staffList[id] || staffList['1018']);
 
-
   return (
-    <div className="h-[730px] w-[1400px] flex flex-col bg-[#f8fafc]">
+    <div className="min-h-screen bg-gray-50">
       <div className="max-w-[1440px] w-full mx-auto p-4 flex flex-col h-full">
         {/* Fixed Header */}
         <div className="bg-white rounded-xl shadow-sm mb-6">
-          <div className="flex items-center gap-6 p-8">
+          <div className="flex items-center gap-6 p-6">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-3xl font-semibold text-blue-600">{staffData.name[0]}</span>
+              <span className="text-2xl font-semibold text-blue-600">{staffData.name[0]}</span>
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-gray-900">{staffData.name}</h1>
-              <p className="text-base text-gray-600 mt-1">
-                ID {staffData.id} | <span className="text-blue-600">{staffData.contractType}</span>
+              <h1 className="text-2xl font-semibold text-gray-800">{staffData.name}</h1>
+              <p className="text-base text-gray-600 mt-1 flex items-center gap-2">
+                <span className="bg-gray-100 px-2 py-0.5 rounded-md text-gray-700">ID {staffData.id}</span> 
+                <span className="text-blue-600 font-medium">{staffData.contractType}</span>
               </p>
             </div>
           </div>
@@ -86,9 +84,8 @@ const StaffProfile = () => {
           </div>
           
           {/* Scrollable Content */}
-          <div className="flex-1 min-h-0 w-[500px]">
+          <div className="flex-1 min-h-0">
             <div className="h-full overflow-y-auto pr-2">
-              {/* <ProfileInfo staffData={staffData} onUpdate={handleUpdateStaff} /> */}
               <Outlet context={{ staffData, setStaffData }}/>
             </div>
           </div>
