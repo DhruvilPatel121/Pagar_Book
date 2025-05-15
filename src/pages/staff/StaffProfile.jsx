@@ -4,7 +4,8 @@ import ProfileSidebar from './components/ProfileSidebar';
 
 const StaffProfile = () => {
   const { id } = useParams();
-  
+  // const [staffData, setStaffData] = useState(staffList[id] || staffList['1018']);
+
   const handleUpdateStaff = (updatedData) => {
     // Here you would typically make an API call to update the data
     setStaffData(prev => ({ ...prev, ...updatedData }));
@@ -86,7 +87,12 @@ const StaffProfile = () => {
           {/* Scrollable Content */}
           <div className="flex-1 min-h-0">
             <div className="h-full overflow-y-auto pr-2">
+<<<<<<< HEAD
               <Outlet context={{ staffData, setStaffData }}/>
+=======
+              {/* <ProfileInfo staffData={staffData} onUpdate={handleUpdateStaff} /> */}
+              <Outlet context={{ staffData, setStaffData, handleUpdateStaff }}/>
+>>>>>>> fab6292c2e29a49a0ab28dc9925c092237cb63aa
             </div>
           </div>
         </div>
