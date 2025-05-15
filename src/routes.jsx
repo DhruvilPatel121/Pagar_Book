@@ -5,8 +5,7 @@ import Layout from './layout/Layout';
 import Dashboard from './pages/Dashboard';
 import Staff from './pages/staff/Staff';
 import Attendance from './pages/attendance/Attendance';
-import Payroll from './pages/Payroll';
-import PayrollDetail from './pages/PayrollDetail';
+import Payroll from './pages/payroll/Payroll';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import StaffProfile from './pages/staff/StaffProfile';
@@ -15,6 +14,7 @@ import YTDStatement from './pages/staff/components/YTDStatement';
 import Fine from './pages/attendance/Fine';
 import Overtime from './pages/attendance/Overtime';
 import SalaryOverview from './pages/staff/components/SalaryOverview';
+import PayrollDetail from './pages/payroll/PayrollDetail';
 
 
 export const router = createBrowserRouter([

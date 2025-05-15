@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaFileAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt } from 'react-icons/fa';
-import { colors, componentStyles, typography, spacing, borders, effects } from '../theme.js';
+import { colors, componentStyles, typography, spacing, borders, effects } from '../../theme.js';
 
 // Sample mock data
 const mockEmployees = [
