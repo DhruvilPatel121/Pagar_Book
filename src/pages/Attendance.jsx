@@ -263,7 +263,7 @@ function Attendance() {
   };
 
   return (
-    <div className="w-full bg-gray-50 h-138 flex flex-col overflow-y-auto">
+    <div className="w-full bg-gray-50 h-155 flex flex-col overflow-y-auto">
       <header className={`${componentStyles.header} sticky top-0 z-10 bg-white shadow-sm`}>
         <div className="flex justify-between items-center">
           <h1 className={typography.header}>Attendance Summary</h1>

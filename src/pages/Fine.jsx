@@ -115,18 +115,20 @@ function Fine() {
   
   return (
     <div className="w-full bg-gray-50 min-h-screen">
-      <header className={componentStyles.header}>
+      <header className="bg-blue-600 text-white sticky top-0 z-30 p-4">
         <div className="flex justify-between items-center">
-          <h1 className={typography.header}>Review Fine</h1>
+          <h1 className={typography.header}>Fine Management</h1>
         </div>
       </header>
-      
-      <div className={componentStyles.finePage.container}>
-        <div className={componentStyles.finePage.header}>
-          <Link to="/attendance" className={componentStyles.finePage.backButton}>
-            <FaArrowLeft className="mr-2" /> Back
-          </Link>
-          <h2 className={componentStyles.finePage.title}>Review Fine</h2>
+
+      <div className="overflow-y-auto h-[calc(100vh-64px)]">
+        <div className={componentStyles.finePage.container}>
+          <div className={componentStyles.finePage.header}>
+            <Link to="/attendance" className={componentStyles.finePage.backButton}>
+              <FaArrowLeft className="mr-2" /> Back
+            </Link>
+            <h2 className={componentStyles.finePage.title}>Review Fines</h2>
+          </div>
         </div>
         
         {/* Staff Fine Summary */}

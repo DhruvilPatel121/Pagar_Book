@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Staff from './pages/staff/Staff';
 import Attendance from './pages/Attendance';
 import Payroll from './pages/Payroll';
+import PayrollDetail from './pages/PayrollDetail';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import Fine from './pages/Fine';
@@ -78,6 +79,10 @@ export const router = createBrowserRouter([
       {
         path: '/payroll',
         element: <Payroll />,
+      },
+      {
+        path: '/payroll/:empId',
+        element: <PayrollDetail />,
       },
       {
         path: '/reports',
