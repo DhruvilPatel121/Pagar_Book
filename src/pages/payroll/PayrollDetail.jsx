@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaCalendarAlt, FaDownload, FaEnvelope, FaPrint, FaUser } from 'react-icons/fa';
-import { colors, componentStyles, typography, spacing } from '../theme.js';
+import { colors, componentStyles, typography, spacing } from '../../theme.js';
 
 function PayrollDetail() {
   const { empId } = useParams();
