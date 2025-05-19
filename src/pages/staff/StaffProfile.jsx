@@ -58,7 +58,7 @@ const StaffProfile = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-[1440px] w-full mx-auto p-4 flex flex-col h-full">
+      <div className="w-full mx-auto p-4 flex flex-col h-full">
         {/* Fixed Header */}
         <div className="bg-white rounded-xl shadow-sm mb-6">
           <div className="flex items-center gap-6 p-6">
