@@ -67,7 +67,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div 
         className={`fixed left-0 top-0 h-screen bg-white shadow-lg transition-all duration-300 ease-in-out z-[50]
-          ${isExpanded ? 'w-64' : 'w-16'} 
+          w-16 hover:w-64
           ${window.innerWidth >= 768 ? 'translate-x-0' : isMobileOpen ? 'translate-x-0' : '-translate-x-full'}`}
         onMouseEnter={() => window.innerWidth >= 768 && setIsExpanded(true)}
         onMouseLeave={() => window.innerWidth >= 768 && setIsExpanded(false)}

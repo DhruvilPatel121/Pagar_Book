@@ -61,6 +61,16 @@ const Loans = () => {
       remainingInstalment: '₹ 0',
       disbursementDate: '19 Jun 2024',
       status: 'Closed'
+    },
+    {
+      employeeName: 'PAVAN',
+      employeeId: '5',
+      loanName: 'EDUCATION FEE LOAN',
+      principal: '₹ 20,000',
+      totalPaidInstalment: '₹ 20,000',
+      remainingInstalment: '₹ 0',
+      disbursementDate: '19 Jun 2024',
+      status: 'Closed'
     }
   ];
 
@@ -108,14 +118,14 @@ const Loans = () => {
 
     return displayedLoans.map((loan, index) => (
       <tr key={index} className="hover:bg-gray-50 transition-colors">
-        <td className="py-4 px-6">{loan.employeeName}</td>
-        <td className="py-4 px-6">{loan.employeeId}</td>
-        <td className="py-4 px-6">{loan.loanName}</td>
-        <td className="py-4 px-6 whitespace-nowrap">{loan.principal}</td>
-        <td className="py-4 px-6 whitespace-nowrap">{loan.totalPaidInstalment}</td>
-        <td className="py-4 px-6 whitespace-nowrap">{loan.remainingInstalment}</td>
-        <td className="py-4 px-6">{loan.disbursementDate}</td>
-        <td className="py-4 px-6">
+        <td className="mx-auto">{loan.employeeName}</td>
+        <td className="mx-auto">{loan.employeeId}</td>
+        <td className="mx-auto">{loan.loanName}</td>
+        <td className="mx-auto">{loan.principal}</td>
+        <td className="mx-auto">{loan.totalPaidInstalment}</td>
+        <td className="mx-auto">{loan.remainingInstalment}</td>
+        <td className="mx-auto">{loan.disbursementDate}</td>
+        <td className="">
           <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${
             loan.status === 'Closed'
               ? 'bg-green-50 text-green-600'
@@ -131,19 +141,19 @@ const Loans = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm">
-      <div className="p-6">
+    <div className="bg-white rounded-xl shadow-sm w-full p-6">
+  
         {/* Header Section */}
-        <div className="pb-4">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-center pb-6">
             <h1 className="text-2xl font-semibold">Loans</h1>
-            <button onClick={() => setIsAddLoanDialogOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-medium transition-colors">
+            <button onClick={() => setIsAddLoanDialogOpen(true)}  
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-medium ">
               + Add New Loan
             </button>
           </div>
 
-          <div className="flex gap-8">
+
+        <div className="flex gap-8">
             {['Loan Details', 'Loan Applications', 'Loan Settings'].map((tab) => (
               <button
                 key={tab}
@@ -158,12 +168,12 @@ const Loans = () => {
               </button>
             ))}
           </div>
-        </div>
+
 
         {/* Search and Filters */}
-        <div className="py-6 flex flex-wrap items-center gap-4">
-          <div className="flex-1 min-w-[300px]">
-            <div className="relative">
+        <div className="py-6 flex items-center gap-4">
+          <div className="flex w-full">
+            <div className="relative w-full">
               <input
                 type="text"
                 placeholder="Search by name, loan ID, or amount"
@@ -179,29 +189,29 @@ const Loans = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full">
             <button
               onClick={() => setActiveFilter('All Loans')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors w-full ${
                 activeFilter === 'All Loans'
                   ? 'bg-blue-50 text-blue-600'
                   : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
               }`}
             >
-              All Loans <span className="ml-2 text-sm">{allLoans.length}</span>
+              All Loans <span className="text-sm">{allLoans.length}</span>
             </button>
             <button
               onClick={() => setActiveFilter('Open Loans')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-2 rounded-lg transition-colors w-full ${
                 activeFilter === 'Open Loans'
                   ? 'bg-blue-50 text-blue-600'
                   : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Open Loans <span className="ml-2 text-sm">0</span>
+              Open Loans <span className="text-sm">0</span>
             </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg text-blue-600 hover:bg-gray-50 flex items-center gap-2 transition-colors">
-              <FiFilter className="w-4 h-4" />
+            <button className=" py-2 w-full border border-gray-300 rounded-lg text-blue-600 hover:bg-gray-50 flex justify-center items-center gap-2 transition-colors">
+              <FiFilter size={16} />
               Filter
             </button>
           </div>
@@ -209,24 +219,23 @@ const Loans = () => {
 
         {/* Table */}
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[1000px]">
+          <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Employee Name</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Employee ID</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Loan Name</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Principal</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Total Paid Instalment</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Remaining Instalment</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Disbursement Date</th>
-                <th className="text-left py-4 px-6 text-gray-600 font-medium text-sm">Status</th>
+                <th className="text-left text-gray-600 font-medium text-sm ">Employee Name</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Employee ID</th>
+                <th className="text-left text-gray-600 font-medium text-sm ">Loan Name</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Principal</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Total Paid Instalment</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Remaining Instalment</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Disbursement Date</th>
+                <th className="text-left text-gray-600 font-medium text-sm">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {renderTableContent()}
             </tbody>
           </table>
-        </div>
       </div>
       <AddLoanDialog 
         isOpen={isAddLoanDialogOpen}

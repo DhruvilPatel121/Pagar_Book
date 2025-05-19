@@ -59,6 +59,7 @@ export const typography = {
 };
 
 // Component-specific styles
+// Add this to your componentStyles object in theme.js
 export const componentStyles = {
   header: `${colors.primary.gradient} ${colors.text.light} ${spacing.header} ${effects.shadow} ${borders.roundedLg}`,
   dateNavButton: `${spacing.iconButton} bg-white/10 hover:bg-white/20 ${borders.roundedFull} ${effects.transition}`,
@@ -161,6 +162,41 @@ export const componentStyles = {
       avatar: "w-8 h-8 rounded-full bg-gray-200 mr-3",
       name: "font-medium text-gray-800",
       info: "text-sm text-gray-500 ml-auto",
+    },
+  },
+  
+  staffPage: {
+    container: "min-h-screen bg-gray-50",
+    contentWrapper: "max-w-[1440px] mx-auto p-4 sm:p-6",
+    header: "flex justify-between items-center mb-6 bg-white p-4 rounded-lg shadow-sm",
+    title: "text-xl font-semibold text-gray-800",
+    addButton: "bg-blue-600 text-white px-4 py-2.5 rounded-md flex items-center gap-2 hover:bg-blue-700 transition-colors",
+    searchBar: {
+      container: "flex flex-wrap gap-4 mb-6 bg-white p-4 rounded-lg shadow-sm",
+      inputWrapper: "flex-1 min-w-[200px] relative",
+      input: "w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500",
+      searchIcon: "absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400",
+      actionButtons: "flex flex-wrap gap-3",
+      filterButton: "px-4 py-2.5 border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-50 transition-colors",
+      filterText: "text-blue-600 font-medium",
+      bulkActionButton: "px-4 py-2.5 border border-gray-300 rounded-md flex items-center gap-2 text-blue-600 hover:bg-gray-50 transition-colors font-medium",
+      reportButton: "px-4 py-2.5 border border-gray-300 rounded-md text-blue-600 hover:bg-gray-50 transition-colors font-medium",
+    },
+    staffList: {
+      container: "bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm",
+      selectAllWrapper: "p-4 border-b border-gray-200 bg-gray-50",
+      selectAllCheckbox: "w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500",
+      selectAllLabel: "text-sm font-medium text-gray-700",
+      departmentHeader: "px-4 py-3 bg-blue-50",
+      departmentName: "text-sm font-medium text-blue-700",
+      departmentCount: "bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full",
+      staffItems: "divide-y divide-gray-200",
+      staffItem: "px-4 py-3.5 flex items-center justify-between hover:bg-gray-50 transition-colors",
+      staffCheckbox: "w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500",
+      staffAvatar: "w-9 h-9 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center text-blue-600 font-medium",
+      staffName: "font-medium text-sm cursor-pointer hover:text-blue-600 transition-colors",
+      staffId: "text-sm text-gray-500",
+      paymentButton: "text-blue-600 text-sm hover:text-blue-700 font-medium px-3 py-1.5 border border-blue-200 rounded-md hover:bg-blue-50 transition-colors",
     },
   },
   
