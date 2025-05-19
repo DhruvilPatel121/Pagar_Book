@@ -17,6 +17,7 @@ import SalaryOverview from './pages/staff/components/SalaryOverview';
 import PayrollDetail from './pages/payroll/PayrollDetail';
 import Loans from './pages/staff/components/loan/Loans';
 import SalaryStructure from './pages/staff/components/SalaryStructure';
+import PagarBookGeo from './pages/geo/PagarBookGeo';
 
 
 export const router = createBrowserRouter([
@@ -94,6 +95,10 @@ export const router = createBrowserRouter([
       {
         path: '/settings',
         element: <Settings />,
+      },
+      {
+        path: '/geo',
+        element: <PagarBookGeo />,
       },
     ],
   },
