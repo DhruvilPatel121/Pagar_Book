@@ -137,68 +137,99 @@ export const componentStyles = {
       activeFine: "bg-purple-500 text-white shadow-sm",
     }
   },
-  // Fine page styles
-  finePage: {
-    container: "bg-white rounded-lg shadow-sm p-4 mx-4 my-4",
-    header: "flex items-center border-b border-gray-200 pb-4 mb-4",
-    backButton: "flex items-center text-blue-600 hover:text-blue-800 transition-colors mr-4",
-    title: `${typography.subheader} text-gray-800`,
-    form: "space-y-6",
-    formGroup: "space-y-2",
-    label: "block text-sm font-medium text-gray-700",
-    input: "w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all",
-    select: "w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all",
-    textarea: "w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all min-h-[100px]",
-    submitButton: `${colors.primary.button} ${colors.text.light} ${spacing.button} ${borders.rounded} ${effects.transition} w-full md:w-auto`,
-    cancelButton: "bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md transition-colors w-full md:w-auto",
-    saveButton: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded-md transition-colors flex items-center text-sm",
-    buttonGroup: "flex flex-col md:flex-row gap-3 justify-end mt-6",
-    entryCard: "border border-gray-200 rounded-lg p-4 mb-4 hover:shadow-sm transition-all",
-    staffList: {
-      container: "mt-6",
-      header: "bg-gray-50 p-3 rounded-t-lg border border-gray-200 font-medium",
-      row: "flex items-center p-3 border-b border-gray-200 hover:bg-gray-50 transition-colors",
-      checkbox: "mr-3 h-5 w-5 text-blue-600 rounded focus:ring-blue-500",
-      avatar: "w-8 h-8 rounded-full bg-gray-200 mr-3",
-      name: "font-medium text-gray-800",
-      info: "text-sm text-gray-500 ml-auto",
-    },
-  },
-  
-  staffPage: {
+  // Geo page styles
+  geoPage: {
     container: "min-h-screen bg-gray-50",
-    contentWrapper: "max-w-[1440px] mx-auto p-4 sm:p-6",
-    header: "flex justify-between items-center mb-6 bg-white p-4 rounded-lg shadow-sm",
-    title: "text-xl font-semibold text-gray-800",
-    addButton: "bg-blue-600 text-white px-4 py-2.5 rounded-md flex items-center gap-2 hover:bg-blue-700 transition-colors",
-    searchBar: {
-      container: "flex flex-wrap gap-4 mb-6 bg-white p-4 rounded-lg shadow-sm",
-      inputWrapper: "flex-1 min-w-[200px] relative",
-      input: "w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500",
-      searchIcon: "absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400",
-      actionButtons: "flex flex-wrap gap-3",
-      filterButton: "px-4 py-2.5 border border-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-50 transition-colors",
-      filterText: "text-blue-600 font-medium",
-      bulkActionButton: "px-4 py-2.5 border border-gray-300 rounded-md flex items-center gap-2 text-blue-600 hover:bg-gray-50 transition-colors font-medium",
-      reportButton: "px-4 py-2.5 border border-gray-300 rounded-md text-blue-600 hover:bg-gray-50 transition-colors font-medium",
-    },
-    staffList: {
-      container: "bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm",
-      selectAllWrapper: "p-4 border-b border-gray-200 bg-gray-50",
-      selectAllCheckbox: "w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500",
-      selectAllLabel: "text-sm font-medium text-gray-700",
-      departmentHeader: "px-4 py-3 bg-blue-50",
-      departmentName: "text-sm font-medium text-blue-700",
-      departmentCount: "bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full",
-      staffItems: "divide-y divide-gray-200",
-      staffItem: "px-4 py-3.5 flex items-center justify-between hover:bg-gray-50 transition-colors",
-      staffCheckbox: "w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500",
-      staffAvatar: "w-9 h-9 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center text-blue-600 font-medium",
-      staffName: "font-medium text-sm cursor-pointer hover:text-blue-600 transition-colors",
-      staffId: "text-sm text-gray-500",
-      paymentButton: "text-blue-600 text-sm hover:text-blue-700 font-medium px-3 py-1.5 border border-blue-200 rounded-md hover:bg-blue-50 transition-colors",
-    },
+    content: "ml-60 max-w-[1440px] mx-auto p-4 sm:p-6",
+    header: "bg-indigo-600 text-white p-4 rounded-lg mb-6 flex justify-between items-center",
+    headerTitle: "text-xl font-medium",
+    headerBadge: "bg-white text-indigo-600 text-xs font-medium px-2.5 py-0.5 rounded-full",
+    headerButton: "bg-white text-indigo-600 px-4 py-2 rounded-md font-medium hover:bg-indigo-50 transition-colors",
+    
+    // Add or update these styles in your componentStyles.geoPage.dashboard section
+    dashboard: {
+      title: "text-2xl font-medium text-gray-800 mb-6",
+      statsGrid: "grid grid-cols-1 md:grid-cols-4 gap-4 mb-6",
+      statCard: {
+        green: "bg-green-50 p-4 rounded-lg",
+        purple: "bg-purple-50 p-4 rounded-lg",
+        blue: "bg-blue-50 p-4 rounded-lg",
+        icon: {
+          green: "bg-green-100 p-2 rounded-full text-green-600 text-xl",
+          purple: "bg-purple-100 p-2 rounded-full text-purple-600 text-xl",
+          blue: "bg-blue-100 p-2 rounded-full text-blue-600 text-xl"
+        },
+        label: "text-sm text-gray-600 mb-1",
+        value: "text-3xl font-semibold text-gray-800"
+      },
+      
+      overviewGrid: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-6",
+      card: "bg-white p-5 rounded-lg shadow-sm border border-gray-200",
+      cardTitle: "text-lg font-medium text-gray-800 mb-4",
+      
+      //progress styles for Tasks Overview
+      progressContainer: "space-y-6",
+      progressRow: "flex items-center justify-between relative cursor-pointer",
+      progressLabel: "text-sm text-gray-600 w-32",
+      progressValue: "font-medium mr-4 w-6 text-center",
+      progressBarContainer: "flex-1 h-8 bg-gray-100 rounded-md overflow-hidden relative",
+      progressFill: "h-full bg-gradient-to-r from-green-100 to-green-300 origin-left",
+      
+      // New tooltip styles
+      tooltip: {
+        container: "absolute z-10 bg-gray-800 text-white px-3 py-1 rounded text-sm font-medium transition-all duration-200 opacity-0 pointer-events-none",
+        visible: "opacity-100",
+        arrow: "absolute w-2 h-2 bg-gray-800 bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45"
+      },
+      
+      customerStat: {
+        container: "mb-4 pb-4 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0",
+        header: "flex justify-between items-start mb-2",
+        label: "text-sm text-gray-600",
+        icon: {
+          green: "w-8 h-8 flex items-center justify-center bg-green-100 rounded-full text-green-600",
+          purple: "w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full text-purple-600"
+        },
+        value: "text-3xl font-semibold text-gray-800 mb-1",
+        trend: "inline-flex items-center gap-1 text-green-600 text-sm bg-green-50 px-2 py-0.5 rounded"
+      },
+      
+      chart: {
+        container: "bg-white p-5 rounded-lg shadow-sm border border-gray-200 mb-6",
+        header: "flex justify-between items-center mb-4",
+        title: "text-lg font-medium text-gray-800",
+        subtitle: "text-sm text-gray-600",
+        controls: "flex items-center gap-3",
+        select: "border border-gray-300 rounded-md px-3 py-1.5 text-sm",
+        dateRange: "border border-gray-300 rounded-md px-3 py-1.5 text-sm flex items-center",
+        chartHeight: "h-80",
+        totalBadge: "bg-gray-800 text-white px-4 py-2 rounded-lg text-sm",
+        customTooltip: "bg-gray-800 text-white px-4 py-2 rounded-lg text-sm shadow-lg"
+      },
+      
+      businessTable: {
+        container: "bg-white p-5 rounded-lg shadow-sm border border-gray-200",
+        header: "mb-4",
+        title: "text-lg font-medium text-gray-800",
+        subtitle: "text-sm text-gray-600",
+        controls: "flex justify-between items-center mb-4",
+        search: "pl-8 pr-4 py-2 border border-gray-300 rounded-md w-64",
+        searchIcon: "w-4 h-4 text-gray-500 absolute left-2.5 top-3",
+        dateSelect: "border border-gray-300 rounded-md px-3 py-1.5 text-sm flex items-center",
+        downloadBtn: "bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm flex items-center",
+        table: "min-w-full divide-y divide-gray-200",
+        tableHeader: "bg-gray-50",
+        tableHeaderCell: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+        tableBody: "bg-white divide-y divide-gray-200",
+        tableCell: "px-6 py-4 whitespace-nowrap text-sm text-gray-500",
+        nameCell: "px-6 py-4 whitespace-nowrap",
+        avatar: {
+          blue: "flex-shrink-0 h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600",
+          gray: "flex-shrink-0 h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"
+        },
+        nameText: "text-sm font-medium text-gray-900 ml-3"
+      }
+    }
   },
   
-  // ... rest of existing styles ...
 };

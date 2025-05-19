@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MdSpaceDashboard, MdEmojiPeople } from "react-icons/md";
+import { MdSpaceDashboard, MdEmojiPeople, MdLocationOn } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5"; 
 import { TbReport } from "react-icons/tb";
 import { FaMoneyCheckAlt } from "react-icons/fa";
@@ -44,6 +44,12 @@ const Sidebar = () => {
     { label: "Attendance", icon: <MdEmojiPeople />, path: "/attendance" },
     { label: "Payroll", icon: <FaMoneyCheckAlt />, path: "/payroll" },
     { label: "Reports", icon: <TbReport />, path: "/reports" },
+    { 
+      label: "PagarBook Geo", 
+      icon: <MdLocationOn />, 
+      path: "/geo", 
+      badge: "New" 
+    },
   ];
 
   return (
@@ -103,8 +109,20 @@ const Sidebar = () => {
                   <span className={`text-xl ${location.pathname === item.path ? 'text-blue-600' : 'text-gray-500'}`}>
                     {item.icon}
                   </span>
-                  {isExpanded && <span className="text-sm font-medium whitespace-nowrap">{item.label}</span>}
+                  {isExpanded && (
+                    <div className="flex items-center">
+                      <span className="text-sm font-medium whitespace-nowrap">{item.label}</span>
+                      {item.badge && (
+                        <span className="ml-2 bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
+                {!isExpanded && item.badge && (
+                  <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
+                )}
               </Link>
             ))}
           </div>
