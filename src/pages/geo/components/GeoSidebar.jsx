@@ -6,10 +6,19 @@ import { FaUsers, FaShoppingCart, FaQuestionCircle, FaCog } from 'react-icons/fa
 const GeoSidebar = ({ mainSidebarWidth }) => {
   const location = useLocation();
   
+  // Helper function to check if a path is active
+  const isActive = (path) => {
+    if (path === '/geo' && location.pathname === '/geo') {
+      return true;
+    }
+    // Check if the current path starts with the item path (for nested routes)
+    return location.pathname.startsWith(path) && path !== '/geo';
+  };
+  
   const sidebarItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <MdDashboard className="text-xl" />, path: '/geo' },
     { id: 'tracking', label: 'Tracking', icon: <MdLocationOn className="text-xl" />, path: '/geo/tracking' },
-    { id: 'forms', label: 'Forms', icon: <MdDescription className="text-xl" />, path: '/geo/forms' },
+    { id: 'forms', label: 'Forms', icon: <MdDescription className="text-xl" />, path: '/geo/forms/responses' },
     { id: 'tasks', label: 'Tasks', icon: <MdAssignment className="text-xl" />, path: '/geo/tasks' },
     { id: 'customers', label: 'Customers', icon: <FaUsers className="text-xl" />, path: '/geo/customers' },
     { id: 'orders', label: 'Orders', icon: <FaShoppingCart className="text-xl" />, path: '/geo/orders' },
@@ -32,13 +41,12 @@ const GeoSidebar = ({ mainSidebarWidth }) => {
             key={item.id}
             to={item.path}
             className={`flex items-center px-4 py-3 text-sm ${
-              location.pathname === item.path || 
-              (item.id === 'dashboard' && location.pathname.startsWith('/geo') && location.pathname === '/geo')
+              isActive(item.path)
                 ? 'bg-blue-50 text-blue-600 border-l-2 border-blue-500'
                 : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <span className={`mr-3 ${location.pathname === item.path ? 'text-blue-500' : 'text-gray-500'}`}>
+            <span className={`mr-3 ${isActive(item.path) ? 'text-blue-500' : 'text-gray-500'}`}>
               {item.icon}
             </span>
             {item.label}
