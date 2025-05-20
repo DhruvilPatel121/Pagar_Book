@@ -27,19 +27,25 @@ const GeoDashboard = () => {
           </div>
           
           {/* Stats Cards */}
-          <StatsCards />
+          <div className="bg-white">
+            <StatsCards />
+          </div>
           
           {/* Tasks and Customers Overview */}
-          <div className={geo.dashboard.overviewGrid}>
+          <div className={`${geo.dashboard.overviewGrid} bg-white`}>
             <TasksOverview />
             <CustomersOverview />
           </div>
           
           {/* Distance Travelled Chart */}
-          <DistanceChart />
+          <div className="bg-white">
+            <DistanceChart />
+          </div>
           
           {/* Business Overview */}
-          <BusinessOverview />
+          <div className="bg-white">
+            <BusinessOverview />
+          </div>
         </>
       );
     } else if (currentPath === '/geo/tracking') {
@@ -61,7 +67,7 @@ const GeoDashboard = () => {
   return (
     <>
       <GeoSidebar />
-      <div className={geo.content}>
+      <div className={`${geo.content} bg-white`}>
         {currentPath !== '/geo' && (
           <div className={geo.header}>
             <h1 className={geo.headerTitle}>PagarBook Geo</h1>
@@ -82,7 +88,7 @@ const StatsCards = () => {
   const ds = componentStyles.geoPage.dashboard;
   return (
     <div className={ds.statsGrid}>
-      <div className={ds.statCard.green}>
+      <div className={`${ds.statCard.green} bg-white`}>
         <div className="flex justify-between items-start">
           <div>
             <p className={ds.statCard.label}>Total Employees</p>
@@ -94,7 +100,7 @@ const StatsCards = () => {
         </div>
       </div>
       
-      <div className={ds.statCard.purple}>
+      <div className={`${ds.statCard.purple} bg-white`}>
         <div className="flex justify-between items-start">
           <div>
             <p className={ds.statCard.label}>Not Started</p>
@@ -106,7 +112,7 @@ const StatsCards = () => {
         </div>
       </div>
       
-      <div className={ds.statCard.purple}>
+      <div className={`${ds.statCard.purple} bg-white`}>
         <div className="flex justify-between items-start">
           <div>
             <p className={ds.statCard.label}>Punched In</p>
@@ -118,7 +124,7 @@ const StatsCards = () => {
         </div>
       </div>
       
-      <div className={ds.statCard.blue}>
+      <div className={`${ds.statCard.blue} bg-white`}>
         <div className="flex justify-between items-start">
           <div>
             <p className={ds.statCard.label}>Punched Out</p>

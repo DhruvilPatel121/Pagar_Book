@@ -19,7 +19,7 @@ const GeoSidebar = ({ mainSidebarWidth }) => {
 
   return (
     <div 
-      className="h-screen bg-white border-r border-gray-200 z-10 overflow-y-auto fixed top-0"
+      className="h-screen bg-white border-r border-gray-200 z-10 overflow-y-auto fixed top-0 ml-5 mt-6"
       style={{ left: mainSidebarWidth, width: '220px' }}
     >
       <div className="p-4 border-b border-gray-200 flex items-center">
