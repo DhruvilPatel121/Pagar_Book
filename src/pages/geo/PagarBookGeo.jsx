@@ -7,7 +7,6 @@
 // import { componentStyles, colors, typography, spacing } from '../../theme';
 // import DatePicker from 'react-datepicker';
 // import 'react-datepicker/dist/react-datepicker.css'; // Add this import
-// import GeoTracking from './components/GeoTracking';
 
 // const PagarBookGeo = () => {
 //   const [locations] = useState([
@@ -573,7 +572,17 @@
     
 //     // Other pages content
 //     else if (currentPath === '/geo/tracking') {
-//       return <GeoTracking />;
+//       return (
+//         <div className="bg-white p-5 rounded-lg shadow-sm">
+//           <h2 className="text-lg font-medium text-gray-800 mb-4">Location Tracking</h2>
+//           <p className="text-gray-600 mb-6">
+//             Monitor real-time location of your staff and track their attendance based on geo-fencing.
+//           </p>
+//           <div className="bg-gray-100 h-96 rounded-lg flex items-center justify-center mb-6">
+//             <p className="text-gray-500">Interactive map will be displayed here</p>
+//           </div>
+//         </div>
+//       );
 //     }
     
 //     // Other pages - placeholder content

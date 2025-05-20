@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
-import { FaCalendarAlt, FaSearch, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import DatePicker from 'react-datepicker';
+import React, { useState, useRef, useEffect } from 'react';
+import { FaCalendarAlt,  FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { componentStyles, colors, typography, spacing } from '../../../theme';
 
 const BusinessOverview = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const ds = componentStyles.geoPage.dashboard;  // Make sure this line is present
+  const [showCalendar, setShowCalendar] = useState(false);
+  const ds = componentStyles.geoPage.dashboard;
+  const calendarRef = useRef(null);
+
+  // Close calendar when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+        setShowCalendar(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const formatDate = (date) => {
     if (!(date instanceof Date)) {
@@ -19,6 +34,96 @@ const BusinessOverview = () => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + days);
     setSelectedDate(newDate);
+  };
+
+  // Calendar component
+  const Calendar = () => {
+    const [viewDate, setViewDate] = useState(new Date(selectedDate));
+
+    const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+    const firstDayOfMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1).getDay();
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const handleDateClick = (day) => {
+      const newDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+      setSelectedDate(newDate);
+      setShowCalendar(false);
+    };
+
+    const changeMonth = (increment) => {
+      const newDate = new Date(viewDate);
+      newDate.setMonth(viewDate.getMonth() + increment);
+      setViewDate(newDate);
+    };
+
+    return (
+      <div className={componentStyles.calendar.container}>
+        <div className={componentStyles.calendar.header}>
+          <button className={componentStyles.calendar.navButton} onClick={() => changeMonth(-1)}>
+            <FaChevronLeft />
+          </button>
+          <div className={componentStyles.calendar.monthYear}>
+            {monthNames[viewDate.getMonth()]} {viewDate.getFullYear()}
+          </div>
+          <button className={componentStyles.calendar.navButton} onClick={() => changeMonth(1)}>
+            <FaChevronRight />
+          </button>
+        </div>
+
+        <div className={componentStyles.calendar.daysGrid}>
+          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day, i) => (
+            <div key={i} className={componentStyles.calendar.dayLabel}>{day}</div>
+          ))}
+
+          {Array.from({ length: firstDayOfMonth }).map((_, i) => (
+            <div key={`empty-${i}`} className={componentStyles.calendar.emptyDay}>.</div>
+          ))}
+
+          {Array.from({ length: daysInMonth }).map((_, i) => {
+            const day = i + 1;
+            const isCurrentDay =
+              day === selectedDate.getDate() &&
+              viewDate.getMonth() === selectedDate.getMonth() &&
+              viewDate.getFullYear() === selectedDate.getFullYear();
+
+            const isToday =
+              day === new Date().getDate() &&
+              viewDate.getMonth() === new Date().getMonth() &&
+              viewDate.getFullYear() === new Date().getFullYear();
+
+            let className = componentStyles.calendar.dayButton;
+            if (isCurrentDay) {
+              className = `${className} ${componentStyles.calendar.currentDay}`;
+            } else if (isToday) {
+              className = `${className} ${componentStyles.calendar.todayIndicator}`;
+            }
+
+            return (
+              <button
+                key={day}
+                onClick={() => handleDateClick(day)}
+                className={className}
+              >
+                {day}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex justify-between mt-2 px-2">
+          <button
+            className="text-blue-500 hover:text-blue-700 text-sm font-medium"
+            onClick={() => {
+              setSelectedDate(new Date());
+              setShowCalendar(false);
+            }}
+          >
+            Today
+          </button>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -41,57 +146,20 @@ const BusinessOverview = () => {
         </div>
         
         <div className="flex items-center gap-3">
-          <div className={`flex items-center ${spacing.smallGap}`}>
+          <div className={`flex items-center ${spacing.smallGap}`} ref={calendarRef}>
             <button onClick={() => navigateDate(-1)} className={componentStyles.dateNavButton}>
               <FaChevronLeft />
             </button>
             <div className={`flex items-center ${spacing.smallGap} ${typography.normal} relative`}>
-              <DatePicker
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                dateFormat="dd MMM yy"
-                className="bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm"
-                customInput={
-                  <button type="button" className="flex items-center justify-between cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-50 shadow-sm w-44 text-left">
-                    <span className="font-medium text-gray-700">{formatDate(selectedDate)}</span>
-                    <FaCalendarAlt className={colors.primary.icon} size={16} />
-                  </button>
-                }
-                popperPlacement="bottom-start"
-                popperModifiers={[
-                  {
-                    name: 'offset',
-                    options: {
-                      offset: [0, 8],
-                    },
-                  },
-                  {
-                    name: 'preventOverflow',
-                    options: {
-                      rootBoundary: 'viewport',
-                      tether: false,
-                      altAxis: true,
-                    },
-                  },
-                ]}
-                popperClassName="z-50"
-                calendarClassName="shadow-lg border border-gray-200 rounded-lg"
-                dayClassName={date => {
-                  const isCurrentDay = 
-                    date.getDate() === selectedDate.getDate() &&
-                    date.getMonth() === selectedDate.getMonth() &&
-                    date.getFullYear() === selectedDate.getFullYear();
-                  
-                  const isToday = 
-                    date.getDate() === new Date().getDate() &&
-                    date.getMonth() === new Date().getMonth() &&
-                    date.getFullYear() === new Date().getFullYear();
-                  
-                  if (isCurrentDay) return componentStyles.calendar.currentDay;
-                  if (isToday) return componentStyles.calendar.todayIndicator;
-                  return componentStyles.calendar.dayButton;
-                }}
-              />
+              <button 
+                type="button" 
+                className="flex items-center justify-between cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-50 shadow-sm w-44 text-left"
+                onClick={() => setShowCalendar(!showCalendar)}
+              >
+                <span className="font-medium text-gray-700">{formatDate(selectedDate)}</span>
+                <FaCalendarAlt className={colors.primary.icon} size={16} />
+              </button>
+              {showCalendar && <Calendar />}
             </div>
             <button onClick={() => navigateDate(1)} className={componentStyles.dateNavButton}>
               <FaChevronRight />
@@ -100,7 +168,7 @@ const BusinessOverview = () => {
         </div>
       </div>
       
-      {/* Add the table */}
+      {/* Table content remains the same */}
       <div className="overflow-x-auto">
         <table className={ds.businessTable.table}>
           <thead>

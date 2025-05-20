@@ -140,7 +140,7 @@ export const componentStyles = {
   // Geo page styles
   geoPage: {
     container: "min-h-screen bg-gray-50",
-    content: "ml-60 max-w-[1440px] mx-auto p-4 sm:p-6",
+    content: "ml-60 max-w-[1440px] mx-auto p-4 sm:p-4 h-screen overflow-y-auto",
     header: "bg-indigo-600 text-white p-4 rounded-lg mb-6 flex justify-between items-center",
     headerTitle: "text-xl font-medium",
     headerBadge: "bg-white text-indigo-600 text-xs font-medium px-2.5 py-0.5 rounded-full",
