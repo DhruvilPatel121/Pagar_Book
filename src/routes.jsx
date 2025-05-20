@@ -105,35 +105,34 @@ export const router = createBrowserRouter([
       },
       {
         path: '/geo',
-        // element: <PagarBookGeo />,
         element: <GeoDashboard />,
+      },
+      {
+        path: '/geo/tracking',
+        element: <TrackingLayout />,
         children: [
           {
             index: true,
-            element: <Navigate to="/geo" replace />,
-          },
-          {
-            path: 'tracking',
             element: <GeoTracking />,
           },
           {
-            path: 'tracking/timeline',
+            path: 'timeline',
             element: <TimelineView />,
           },
           {
-            path: 'tracking/dashboard',
+            path: 'dashboard',
             element: <TrackingDashboard />,
           },
           {
-            path: 'tracking/reports',
+            path: 'reports',
             element: <TrackingReports />,
           },
           {
-            path: 'tracking/settings',
+            path: 'settings',
             element: <TrackingSettings />,
           },
           {
-            path: 'tracking/guide',
+            path: 'guide',
             element: <TrackingGuide />,
           },
         ],
