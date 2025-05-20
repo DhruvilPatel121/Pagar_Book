@@ -26,26 +26,6 @@ import GeoDashboard from './pages/geo/dashboard/GeoDashboard';
 // import TrackingReports from './pages/geo/tracking/TrackingReports';
 // import TrackingSettings from './pages/geo/tracking/TrackingSettings';
 // import TrackingGuide from './pages/geo/tracking/TrackingGuide';
-// import { FormResponses } from './pages/geo/forms';
-import FormResponses from './pages/geo/forms/FormResponses';
-import ResponseDetail from './pages/geo/forms/ResponseDetail';
-
-// Create a wrapper component for Geo pages
-const GeoWrapper = () => {
-  return (
-    <>
-      <GeoDashboard />
-      <div style={{ marginLeft: '225px', paddingTop: '1rem' }}>
-        <Outlet />
-      </div>
-    </>
-  );
-};
-
-// Create a Forms wrapper
-const FormsWrapper = () => {
-  return <Outlet />;
-};
 
 export const router = createBrowserRouter([
   {
@@ -126,11 +106,11 @@ export const router = createBrowserRouter([
       {
         path: '/geo',
         // element: <PagarBookGeo />,
-        element: <GeoWrapper />,
+        element: <GeoDashboard />,
         children: [
           {
             index: true,
-            element: <div className="p-6">Welcome to Geo Dashboard</div>,
+            element: <Navigate to="/geo" replace />,
           },
           // {
           //   path: 'tracking',
@@ -156,24 +136,6 @@ export const router = createBrowserRouter([
           //   path: 'tracking/guide',
           //   element: <TrackingGuide />,
           // },
-          {
-            path: 'forms',
-            element: <FormsWrapper />,
-            children: [
-              {
-                index: true,
-                element: <Navigate to="responses" replace />,
-              },
-              {
-                path: 'responses',
-                element: <FormResponses />,
-              },
-              {
-                path: 'response/:responseId',
-                element: <ResponseDetail />,
-              },
-            ],
-          },
         ],
       },
     ],
