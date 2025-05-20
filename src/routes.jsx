@@ -19,13 +19,13 @@ import Loans from './pages/staff/components/loan/Loans';
 import SalaryStructure from './pages/staff/components/SalaryStructure';
 // import PagarBookGeo from './pages/geo/PagarBookGeo';
 import GeoDashboard from './pages/geo/dashboard/GeoDashboard';
-// import TrackingLayout from './pages/geo/tracking/TrackingLayout';
-// import GeoTracking from './pages/geo/tracking/GeoTracking';
-// import TimelineView from './pages/geo/tracking/TimelineView';
-// import TrackingDashboard from './pages/geo/tracking/TrackingDashboard';
-// import TrackingReports from './pages/geo/tracking/TrackingReports';
-// import TrackingSettings from './pages/geo/tracking/TrackingSettings';
-// import TrackingGuide from './pages/geo/tracking/TrackingGuide';
+import TrackingLayout from './pages/geo/tracking/TrackingLayout';
+import GeoTracking from './pages/geo/tracking/GeoTracking';
+import TimelineView from './pages/geo/tracking/TimelineView';
+import TrackingDashboard from './pages/geo/tracking/TrackingDashboard';
+import TrackingReports from './pages/geo/tracking/TrackingReports';
+import TrackingSettings from './pages/geo/tracking/TrackingSettings';
+import TrackingGuide from './pages/geo/tracking/TrackingGuide';
 
 export const router = createBrowserRouter([
   {
@@ -105,37 +105,36 @@ export const router = createBrowserRouter([
       },
       {
         path: '/geo',
-        // element: <PagarBookGeo />,
         element: <GeoDashboard />,
+      },
+      {
+        path: '/geo/tracking',
+        element: <TrackingLayout />,
         children: [
           {
             index: true,
-            element: <Navigate to="/geo" replace />,
+            element: <GeoTracking />,
           },
-          // {
-          //   path: 'tracking',
-          //   element: <GeoTracking />,
-          // },
-          // {
-          //   path: 'tracking/timeline',
-          //   element: <TimelineView />,
-          // },
-          // {
-          //   path: 'tracking/dashboard',
-          //   element: <TrackingDashboard />,
-          // },
-          // {
-          //   path: 'tracking/reports',
-          //   element: <TrackingReports />,
-          // },
-          // {
-          //   path: 'tracking/settings',
-          //   element: <TrackingSettings />,
-          // },
-          // {
-          //   path: 'tracking/guide',
-          //   element: <TrackingGuide />,
-          // },
+          {
+            path: 'timeline',
+            element: <TimelineView />,
+          },
+          {
+            path: 'dashboard',
+            element: <TrackingDashboard />,
+          },
+          {
+            path: 'reports',
+            element: <TrackingReports />,
+          },
+          {
+            path: 'settings',
+            element: <TrackingSettings />,
+          },
+          {
+            path: 'guide',
+            element: <TrackingGuide />,
+          },
         ],
       },
     ],
