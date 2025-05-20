@@ -6,7 +6,7 @@ import TasksOverview from './TasksOverview';
 import CustomersOverview from './CustomersOverview';
 import DistanceChart from './DistanceChart';
 import BusinessOverview from './BusinessOverview';
-import GeoTracking from '../tracking/GeoTracking';
+// import GeoTracking from '../tracking/GeoTracking';
 import { MdPeople, MdAccessTime, MdLogin, MdLogout } from 'react-icons/md';
 
 const GeoDashboard = () => {
