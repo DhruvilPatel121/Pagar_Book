@@ -25,7 +25,7 @@ import TimelineView from './pages/geo/tracking/TimelineView';
 import TrackingDashboard from './pages/geo/tracking/TrackingDashboard';
 import TrackingReports from './pages/geo/tracking/TrackingReports';
 import TrackingSettings from './pages/geo/tracking/TrackingSettings';
-import TrackingGuide from './pages/geo/tracking/TrackingGuide';
+
 
 export const router = createBrowserRouter([
   {
@@ -130,10 +130,6 @@ export const router = createBrowserRouter([
           {
             path: 'settings',
             element: <TrackingSettings />,
-          },
-          {
-            path: 'guide',
-            element: <TrackingGuide />,
           },
         ],
       },
