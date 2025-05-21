@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Layout from './layout/Layout';
 
 // Import page components
@@ -26,6 +26,8 @@ import GeoDashboard from './pages/geo/dashboard/GeoDashboard';
 // import TrackingReports from './pages/geo/tracking/TrackingReports';
 // import TrackingSettings from './pages/geo/tracking/TrackingSettings';
 // import TrackingGuide from './pages/geo/tracking/TrackingGuide';
+import FormResponses from './pages/geo/forms/FormResponses';
+// import ResponseDetail from './pages/geo/forms/ResponseDetail';
 
 export const router = createBrowserRouter([
   {
@@ -105,39 +107,46 @@ export const router = createBrowserRouter([
       },
       {
         path: '/geo',
-        // element: <PagarBookGeo />,
         element: <GeoDashboard />,
-        children: [
-          {
-            index: true,
-            element: <Navigate to="/geo" replace />,
-          },
-          // {
-          //   path: 'tracking',
-          //   element: <GeoTracking />,
-          // },
-          // {
-          //   path: 'tracking/timeline',
-          //   element: <TimelineView />,
-          // },
-          // {
-          //   path: 'tracking/dashboard',
-          //   element: <TrackingDashboard />,
-          // },
-          // {
-          //   path: 'tracking/reports',
-          //   element: <TrackingReports />,
-          // },
-          // {
-          //   path: 'tracking/settings',
-          //   element: <TrackingSettings />,
-          // },
-          // {
-          //   path: 'tracking/guide',
-          //   element: <TrackingGuide />,
-          // },
-        ],
       },
+      // {
+      //   path: '/geo/tracking',
+      //   element: <TrackingLayout />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <GeoTracking />,
+      //     },
+      //     {
+      //       path: 'timeline',
+      //       element: <TimelineView />,
+      //     },
+      //     {
+      //       path: 'dashboard',
+      //       element: <TrackingDashboard />,
+      //     },
+      //     {
+      //       path: 'reports',
+      //       element: <TrackingReports />,
+      //     },
+      //     {
+      //       path: 'settings',
+      //       element: <TrackingSettings />,
+      //     },
+      //     {
+      //       path: 'guide',
+      //       element: <TrackingGuide />,
+      //     },
+      //   ],
+      // },
+      {
+        path:'/geo/forms/responses',
+        element:<FormResponses/>
+      },
+      {
+        // path:'/geo/forms/response/:responseId',
+        // element:<ResponseDetail/>
+      }
     ],
   },
 ]);

@@ -13,7 +13,7 @@ const GeoDashboard = () => {
   return (
     <>
       <GeoSidebar />
-      <div className="ml-[220px] flex flex-col h-full p-4">
+      <div className="ml-[250px] flex flex-col h-full  ">
         {/* Dashboard Header */}
         <div className={geo.header}>
           <h1 className={geo.headerTitle}>Dashboard</h1>
