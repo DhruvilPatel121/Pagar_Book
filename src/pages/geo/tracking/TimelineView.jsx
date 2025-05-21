@@ -117,7 +117,7 @@ const TimelineView = () => {
 
       <div className="flex flex-1 overflow-hidden">
         {/* Timeline Panel */}
-        <div className="w-[400px] border-r border-gray-200 overflow-y-auto">
+        <div className="w-[400px] border-r border-gray-200 h-[550px] overflow-y-auto">
           <div className="p-4 bg-gray-50">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-500">Timeline</span>
