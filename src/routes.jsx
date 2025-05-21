@@ -29,6 +29,15 @@ import GeoDashboard from './pages/geo/dashboard/GeoDashboard';
 import FormResponses from './pages/geo/forms/FormResponses';
 // import ResponseDetail from './pages/geo/forms/ResponseDetail';
 
+// import TrackingLayout from './pages/geo/tracking/TrackingLayout';
+// import GeoTracking from './pages/geo/tracking/GeoTracking';
+// import TimelineView from './pages/geo/tracking/TimelineView';
+// import TrackingDashboard from './pages/geo/tracking/TrackingDashboard';
+// import TrackingReports from './pages/geo/tracking/TrackingReports';
+// import TrackingSettings from './pages/geo/tracking/TrackingSettings';
+
+
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -140,8 +149,34 @@ export const router = createBrowserRouter([
       //   ],
       // },
       {
+
         path:'/geo/forms/responses',
-        element:<FormResponses/>
+        element:<FormResponses/>,
+
+        // path: '/geo/tracking',
+        // element: <TrackingLayout />,
+        // children: [
+        //   {
+        //     index: true,
+        //     element: <GeoTracking />,
+        //   },
+        //   {
+        //     path: 'timeline',
+        //     element: <TimelineView />,
+        //   },
+        //   {
+        //     path: 'dashboard',
+        //     element: <TrackingDashboard />,
+        //   },
+        //   {
+        //     path: 'reports',
+        //     element: <TrackingReports />,
+        //   },
+        //   {
+        //     path: 'settings',
+        //     element: <TrackingSettings />,
+        //   },
+        // ],
       },
       {
         // path:'/geo/forms/response/:responseId',
