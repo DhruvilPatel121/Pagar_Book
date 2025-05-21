@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaCalendarAlt, FaShare, FaFilter } from 'react-icons/fa';
 import { IoRefresh } from 'react-icons/io5';
-import { componentStyles } from '../../../theme';
+import { componentStyles, colors } from '../../../theme';
 
 const TrackingDashboard = () => {
   const [selectedDate, setSelectedDate] = useState('19 May 2025');
@@ -82,10 +82,10 @@ useEffect(() => {
               className="px-4 py-2 border border-gray-300 rounded-lg flex items-center gap-2 cursor-pointer"
             >
               <span className="text-gray-700">{selectedDate}</span>
-              <FaCalendarAlt className="text-gray-500" />
+              <FaCalendarAlt className={colors.primary.icon} />
             </button>
             {isCalendarOpen && (
-              <div className="absolute right-0 top-full mt-[-350px] z-50">
+              <div className="absolute right-0 top-full z-50">
           <div className="bg-white rounded-lg shadow-xl border border-gray-200 w-64">
             <Calendar
               selectedDate={selectedDate}

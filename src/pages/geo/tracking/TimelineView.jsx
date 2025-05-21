@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Polyline, Marker, Popup } from 'react-leaflet'
 import { FaCalendarAlt, FaShare, FaLayerGroup, FaExpand } from 'react-icons/fa';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { componentStyles } from '../../../theme';
+import { componentStyles, colors } from '../../../theme';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const TimelineView = () => {
@@ -92,7 +92,7 @@ const TimelineView = () => {
                 className="px-4 py-2 border border-gray-300 rounded-lg flex items-center gap-2 cursor-pointer"
               >
                 <span className="text-gray-700">{selectedDate}</span>
-                <FaCalendarAlt className="text-gray-500" />
+                <FaCalendarAlt className={colors.primary.icon}/>
               </button>
               {isCalendarOpen && (
                 <Calendar 

@@ -96,7 +96,7 @@ export const componentStyles = {
   },
   
   calendar: {
-    container: "absolute z-20 mt-90 bg-white shadow-xl rounded-lg border border-gray-200 w-64 overflow-hidden",
+    container: "absolute bg-white shadow-xl rounded-lg border border-gray-200 w-64 overflow-hidden left-5 top-full z-50",
     header: "bg-gradient-to-r from-indigo-600 to-blue-500 text-white p-3 flex justify-between items-center",
     navButton: "text-white hover:text-gray-200 text-lg font-medium transition-all hover:scale-110",
     monthYear: "font-medium text-lg",
