@@ -33,6 +33,11 @@ const TimelineView = () => {
       { time: '09:46 AM', type: 'walk', distance: '0 km', duration: '15m' },
       { time: '10:01 AM', type: 'drive', distance: '1 km', duration: '4m' },
       { time: '10:06 AM', type: 'stop', duration: '1m', location: 'Vadodara, Vadodara Rural Taluka, Vadodara District, Gujarat, 390001, India' },
+      { time: '09:28 AM', type: 'start', label: 'Tracking Started' },
+      { time: '09:28 AM', type: 'drive', distance: '6.15 km', duration: '17m' },
+      { time: '09:46 AM', type: 'walk', distance: '0 km', duration: '15m' },
+      { time: '10:01 AM', type: 'drive', distance: '1 km', duration: '4m' },
+      { time: '10:06 AM', type: 'stop', duration: '1m', location: 'Vadodara, Vadodara Rural Taluka, Vadodara District, Gujarat, 390001, India' },
     ]
   };
 

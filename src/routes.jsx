@@ -18,7 +18,7 @@ import PayrollDetail from './pages/payroll/PayrollDetail';
 import Loans from './pages/staff/components/loan/Loans';
 import SalaryStructure from './pages/staff/components/SalaryStructure';
 // import PagarBookGeo from './pages/geo/PagarBookGeo';
-import GeoDashboard from './pages/geo/dashboard/GeoDashboard';
+import GeoDashboard from './pages/geo/dashboard/geodashboard';
 import TrackingLayout from './pages/geo/tracking/TrackingLayout';
 import GeoTracking from './pages/geo/tracking/GeoTracking';
 import TimelineView from './pages/geo/tracking/TimelineView';
@@ -26,7 +26,12 @@ import TrackingDashboard from './pages/geo/tracking/TrackingDashboard';
 import TrackingReports from './pages/geo/tracking/TrackingReports';
 import TrackingSettings from './pages/geo/tracking/TrackingSettings';
 import FormResponses from './pages/geo/forms/FormResponses';
-
+import FormTemplates from './pages/geo/forms/FormTemplates';
+import FormReports from './pages/geo/forms/FormReports';
+import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
+// import FormHowToUse from './pages/geo/forms/FormHowToUse';
+// Remove the duplicate import below
+// import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
 
 export const router = createBrowserRouter([
   {
@@ -134,10 +139,35 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      // Forms routes
       {
-        path:'/geo/forms/responses',
-        element:<FormResponses/>,
-      }
+        path: '/geo/forms',
+        element: <Navigate to="/geo/forms/responses" replace />,
+      },
+      {
+        path: '/geo/forms/responses',
+        element: <FormResponses />,
+      },
+      {
+        path: '/geo/forms/templates',
+        element: <FormTemplates />,
+      },
+      {
+        path: '/geo/forms/templates/new',
+        element: <FormTemplateEditor />,
+      },
+      {
+        path: '/geo/forms/templates/edit/:id',
+        element: <FormTemplateEditor />,
+      },
+      {
+        path: '/geo/forms/reports',
+        element: <FormReports />,
+      },
+      // {
+      //   path: '/geo/forms/how-to-use',
+      //   element: <FormHowToUse />,
+      // }
     ],
   },
 ]);

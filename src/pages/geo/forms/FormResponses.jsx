@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaSearch, FaCalendarAlt, FaDownload, FaEye, FaSync, FaChevronLeft, FaChevronRight, FaRegCalendarAlt } from 'react-icons/fa';
 import GeoSidebar from '../components/GeoSidebar';
-import { componentStyles } from '../../../theme';
+import { componentStyles, colors, borders, effects } from '../../../theme';
+import FormsHeader from './components/FormsHeader';
 
 const FormResponses = () => {
   const location = useLocation();
@@ -259,39 +260,8 @@ const FormResponses = () => {
       <GeoSidebar />
       <div className="ml-[230px] w-[1050px] flex flex-col h-screen overflow-hidden">
         <div className="bg-white rounded-lg shadow-sm m-6 flex flex-col flex-1 overflow-hidden">
-          {/* Tabs */}
-          <div className="flex border-b">
-            <button
-              className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'responses' 
-                  ? 'text-blue-600 border-b-2 border-blue-600' 
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-              onClick={() => setActiveTab('responses')}
-            >
-              Responses
-            </button>
-            <button
-              className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'templates' 
-                  ? 'text-blue-600 border-b-2 border-blue-600' 
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-              onClick={() => setActiveTab('templates')}
-            >
-              Templates
-            </button>
-            <button
-              className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'reports' 
-                  ? 'text-blue-600 border-b-2 border-blue-600' 
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-              onClick={() => setActiveTab('reports')}
-            >
-              Reports
-            </button>
-          </div>
+          {/* Use FormsHeader component */}
+          <FormsHeader />
 
           {/* Content */}
           <div className="p-6 flex flex-col flex-1 overflow-hidden">
