@@ -29,9 +29,14 @@ import FormResponses from './pages/geo/forms/FormResponses';
 import FormTemplates from './pages/geo/forms/FormTemplates';
 import FormReports from './pages/geo/forms/FormReports';
 import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
-// import FormHowToUse from './pages/geo/forms/FormHowToUse';
-// Remove the duplicate import below
-// import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
+import TaskLayout from './pages/geo/task/TaskLayout';
+import TaskDashboard from './pages/geo/task/TaskDashboard';
+import TaskList from './pages/geo/task/taskList/TaskList';
+import AssignTask from './pages/geo/task/assignTask/AssignTask';
+import TaskReports from './pages/geo/task/TaskReports';
+import TaskSettings from './pages/geo/task/TaskSettings';
+import TaskPending from './pages/geo/task/taskList/TaskPending';
+import TaskRequest from './pages/geo/task/taskList/TaskRequest';
 
 export const router = createBrowserRouter([
   {
@@ -164,10 +169,45 @@ export const router = createBrowserRouter([
         path: '/geo/forms/reports',
         element: <FormReports />,
       },
-      // {
-      //   path: '/geo/forms/how-to-use',
-      //   element: <FormHowToUse />,
-      // }
+      // Task routes
+      {
+        path: '/geo/tasks',
+        element: <TaskLayout />,
+        children: [
+          {
+            index: true,
+            element: <TaskDashboard />,
+          },
+          {
+            path: 'list',
+            element: <TaskList />,
+          },
+          {
+            path: 'list/all',
+            element: <TaskList />,
+          },
+          {
+            path: 'list/pending',
+            element: <TaskPending />,
+          },
+          {
+            path: 'list/requests',
+            element: <TaskRequest />,
+          },
+          {
+            path: 'assign',
+            element: <AssignTask />,
+          },
+          {
+            path: 'reports',
+            element: <TaskReports />,
+          },
+          {
+            path: 'settings',
+            element: <TaskSettings />,
+          },
+        ],
+      },
     ],
   },
 ]);
