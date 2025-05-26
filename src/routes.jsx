@@ -29,8 +29,14 @@ import FormResponses from './pages/geo/forms/FormResponses';
 import FormTemplates from './pages/geo/forms/FormTemplates';
 import FormReports from './pages/geo/forms/FormReports';
 import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
-
-// Import Customers components
+import TaskLayout from './pages/geo/task/TaskLayout';
+import TaskDashboard from './pages/geo/task/TaskDashboard';
+import TaskList from './pages/geo/task/taskList/TaskList';
+import AssignTask from './pages/geo/task/assignTask/AssignTask';
+import TaskReports from './pages/geo/task/TaskReports';
+import TaskSettings from './pages/geo/task/TaskSettings';
+import TaskPending from './pages/geo/task/taskList/TaskPending';
+import TaskRequest from './pages/geo/task/taskList/TaskRequest';
 import CustomersLayout from './pages/geo/customers/CustomersLayout';
 import CustomersDashboard from './pages/geo/customers/CustomersDashboard';
 import EditCustomer from './pages/geo/customers/EditCustomer';
@@ -40,6 +46,7 @@ import CustomersTemplate from './pages/geo/customers/CustomersTemplate';
 import StaffPermissions from './pages/geo/customers/StaffPermissions';
 import AddCustomer from './pages/geo/customers/AddCustomer';
 import ManageCustomersBulk from './pages/geo/customers/ManageCustomersBulk';
+
 
 export const router = createBrowserRouter([
   {
@@ -172,6 +179,45 @@ export const router = createBrowserRouter([
         path: '/geo/forms/reports',
         element: <FormReports />,
       },
+      // Task routes
+      {
+        path: '/geo/tasks',
+        element: <TaskLayout />,
+        children: [
+          {
+            index: true,
+            element: <TaskDashboard />,
+          },
+          {
+            path: 'list',
+            element: <TaskList />,
+          },
+          {
+            path: 'list/all',
+            element: <TaskList />,
+          },
+          {
+            path: 'list/pending',
+            element: <TaskPending />,
+          },
+          {
+            path: 'list/requests',
+            element: <TaskRequest />,
+          },
+          {
+            path: 'assign',
+            element: <AssignTask />,
+          },
+          {
+            path: 'reports',
+            element: <TaskReports />,
+          },
+          {
+            path: 'settings',
+            element: <TaskSettings />,
+          },
+        ],
+      },
       // Customers routes
       {
         path: '/geo/customers',
@@ -209,7 +255,6 @@ export const router = createBrowserRouter([
             path: 'bulk',
             element: <ManageCustomersBulk />,
           },
-          // Removed 'add-options' route
         ],
       },
     ],
