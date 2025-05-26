@@ -9,7 +9,8 @@ function TaskLayout() {
       <GeoSidebar />
       <div className="ml-[250px] flex flex-col h-full">
         <TaskNav />
-        <div className="flex-1">
+        {/* <div className="flex-1"> */}
+        <div className="h-[calc(92vh-60px)] overflow-y-auto">
           <Outlet />
         </div>
       </div>
