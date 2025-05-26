@@ -37,6 +37,16 @@ import TaskReports from './pages/geo/task/TaskReports';
 import TaskSettings from './pages/geo/task/TaskSettings';
 import TaskPending from './pages/geo/task/taskList/TaskPending';
 import TaskRequest from './pages/geo/task/taskList/TaskRequest';
+import CustomersLayout from './pages/geo/customers/CustomersLayout';
+import CustomersDashboard from './pages/geo/customers/CustomersDashboard';
+import EditCustomer from './pages/geo/customers/EditCustomer';
+import CustomersListPage from './pages/geo/customers/CustomersListPage';
+import CustomersSettings from './pages/geo/customers/CustomersSettings';
+import CustomersTemplate from './pages/geo/customers/CustomersTemplate';
+import StaffPermissions from './pages/geo/customers/StaffPermissions';
+import AddCustomer from './pages/geo/customers/AddCustomer';
+import ManageCustomersBulk from './pages/geo/customers/ManageCustomersBulk';
+
 
 export const router = createBrowserRouter([
   {
@@ -205,6 +215,43 @@ export const router = createBrowserRouter([
           {
             path: 'settings',
             element: <TaskSettings />,
+          },
+      // Customers routes
+      {
+        path: '/geo/customers',
+        element: <CustomersLayout />,
+        children: [
+          {
+            index: true,
+            element: <CustomersDashboard />,
+          },
+          {
+            path: 'list',
+            element: <CustomersListPage />,
+          },
+          {
+            path: 'edit/:id',
+            element: <EditCustomer />,
+          },
+          {
+            path: 'settings',
+            element: <CustomersSettings />,
+          },
+          {
+            path: 'template',
+            element: <CustomersTemplate />,
+          },
+          {
+            path: 'staff-permissions',
+            element: <StaffPermissions />,
+          },
+          {
+            path: 'add',
+            element: <AddCustomer />,
+          },
+          {
+            path: 'bulk',
+            element: <ManageCustomersBulk />,
           },
         ],
       },
