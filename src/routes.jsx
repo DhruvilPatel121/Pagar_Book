@@ -29,9 +29,17 @@ import FormResponses from './pages/geo/forms/FormResponses';
 import FormTemplates from './pages/geo/forms/FormTemplates';
 import FormReports from './pages/geo/forms/FormReports';
 import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
-// import FormHowToUse from './pages/geo/forms/FormHowToUse';
-// Remove the duplicate import below
-// import FormTemplateEditor from './pages/geo/forms/FormTemplateEditor';
+
+// Import Customers components
+import CustomersLayout from './pages/geo/customers/CustomersLayout';
+import CustomersDashboard from './pages/geo/customers/CustomersDashboard';
+import EditCustomer from './pages/geo/customers/EditCustomer';
+import CustomersListPage from './pages/geo/customers/CustomersListPage';
+import CustomersSettings from './pages/geo/customers/CustomersSettings';
+import CustomersTemplate from './pages/geo/customers/CustomersTemplate';
+import StaffPermissions from './pages/geo/customers/StaffPermissions';
+import AddCustomer from './pages/geo/customers/AddCustomer';
+import ManageCustomersBulk from './pages/geo/customers/ManageCustomersBulk';
 
 export const router = createBrowserRouter([
   {
@@ -164,10 +172,46 @@ export const router = createBrowserRouter([
         path: '/geo/forms/reports',
         element: <FormReports />,
       },
-      // {
-      //   path: '/geo/forms/how-to-use',
-      //   element: <FormHowToUse />,
-      // }
+      // Customers routes
+      {
+        path: '/geo/customers',
+        element: <CustomersLayout />,
+        children: [
+          {
+            index: true,
+            element: <CustomersDashboard />,
+          },
+          {
+            path: 'list',
+            element: <CustomersListPage />,
+          },
+          {
+            path: 'edit/:id',
+            element: <EditCustomer />,
+          },
+          {
+            path: 'settings',
+            element: <CustomersSettings />,
+          },
+          {
+            path: 'template',
+            element: <CustomersTemplate />,
+          },
+          {
+            path: 'staff-permissions',
+            element: <StaffPermissions />,
+          },
+          {
+            path: 'add',
+            element: <AddCustomer />,
+          },
+          {
+            path: 'bulk',
+            element: <ManageCustomersBulk />,
+          },
+          // Removed 'add-options' route
+        ],
+      },
     ],
   },
 ]);
