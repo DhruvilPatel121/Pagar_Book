@@ -216,6 +216,8 @@ export const router = createBrowserRouter([
             path: 'settings',
             element: <TaskSettings />,
           },
+        ],
+      },
       // Customers routes
       {
         path: '/geo/customers',
