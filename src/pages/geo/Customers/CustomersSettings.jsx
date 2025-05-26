@@ -6,35 +6,7 @@ const CustomersSettings = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
-      {/* Navigation Tabs */}
-      {/* <div className="flex flex-wrap gap-2 mb-8 bg-gray-100 p-2 rounded-lg">
-        <Link 
-          to="/geo/customers" 
-          className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-md transition-colors"
-        >
-          Dashboard
-        </Link>
-        <Link 
-          to="/geo/customers/list" 
-          className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-md transition-colors"
-        >
-          Customers List
-        </Link>
-        <Link 
-          to="/geo/customers/settings" 
-          className="px-4 py-2 text-sm font-medium text-indigo-600 bg-white shadow-sm rounded-md transition-colors"
-        >
-          Customers Settings
-        </Link>
-        <Link 
-          to="#" 
-          className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-md transition-colors"
-        >
-          How To Use
-        </Link>
-      </div> */}
-
+    <div className="bg-white rounded-lg mx-auto px-4 py-6">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-800">Settings</h1>

@@ -40,7 +40,7 @@ import TaskRequest from './pages/geo/task/taskList/TaskRequest';
 import CustomersLayout from './pages/geo/customers/CustomersLayout';
 import CustomersDashboard from './pages/geo/customers/CustomersDashboard';
 import EditCustomer from './pages/geo/customers/EditCustomer';
-import CustomersListPage from './pages/geo/customers/CustomersListPage';
+import CustomersList from './pages/geo/customers/CustomersList';
 import CustomersSettings from './pages/geo/customers/CustomersSettings';
 import CustomersTemplate from './pages/geo/customers/CustomersTemplate';
 import StaffPermissions from './pages/geo/customers/StaffPermissions';
@@ -229,7 +229,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'list',
-            element: <CustomersListPage />,
+            element: <CustomersList />
           },
           {
             path: 'edit/:id',

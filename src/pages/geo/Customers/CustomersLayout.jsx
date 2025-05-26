@@ -5,17 +5,15 @@ import GeoSidebar from '../components/GeoSidebar';
 
 function CustomersLayout() {
   return (
-    <div className="flex h-full bg-gray-50">
+    <>
       <GeoSidebar />
-      <div className="ml-[250px] flex-1 flex flex-col h-screen">
-        <div className="sticky top-0 z-10 bg-gray-50 pb-2 mt-6">
+      <div className="ml-[250px] flex flex-col h-full">
           <CustomersHeader />
-        </div>
-        <div className="flex-1 overflow-y-auto">
+        <div className="h-[calc(92vh-60px)] overflow-y-auto">
           <Outlet />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

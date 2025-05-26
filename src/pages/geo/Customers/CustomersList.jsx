@@ -215,150 +215,151 @@ const CustomersList = () => {
     };
   }, [showAddOptions, showFilter]);
   
-  // In the return statement, add the overlay right after the opening div
   return (
-    <div className="p-6 pt-4 flex flex-col space-y-6 max-w-260 mx-auto relative">
+    <div className="p-4 bg-white rounded-lg shadow-sm h-full">
       {/* Semi-transparent overlay */}
       {showOverlay && (
-        <div className="fixed inset-0 bg-gray-900/40 z-40"></div>
+        <div className="fixed inset-0 bg-gray-900/40 z-50"></div>
       )}
       
-      {/* Rest of your component */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-semibold text-gray-800">Customers</h1>
-          <p className="text-sm text-gray-600">Access your customer details, or add more from this page.</p>
-        </div>
-        <div className="flex space-x-3">
-          <button
-            onClick={() => setShowAddOptions(!showAddOptions)}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center text-sm shadow-sm"
-          >
-            <FaUserPlus className="mr-2" />
-            Add Customer
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-
-          {/* Add Customer Dropdown */}
-          <div className="relative add-customer-dropdown">
+      {/* Header section */}
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-4">
+          <div>
+            <h1 className="text-xl font-semibold text-gray-800">Customers</h1>
+            <p className="text-sm text-gray-600">Access your customer details, or add more from this page.</p>
+          </div>
+          <div className="flex space-x-3">
             <button
-              onClick={handleCustomersTemplate}
-              className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center text-sm shadow-sm"
+              onClick={() => setShowAddOptions(!showAddOptions)}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center text-sm shadow-sm"
             >
-              Customers Template
+              <FaUserPlus className="mr-2" />
+              Add Customer
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
             </button>
 
-            {showAddOptions && (
-              <div className="absolute flex w-80 right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">Add Customer</h3>
-                  <p className="text-sm text-gray-600 mb-4">Add a customer by filling in the details below.</p>
+            {/* Add Customer Dropdown */}
+            <div className="relative add-customer-dropdown">
+              <button
+                onClick={handleCustomersTemplate}
+                className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center text-sm shadow-sm"
+              >
+                Customers Template
+              </button>
 
-                  <div className="space-y-2">
-                    <button
-                      onClick={handleAddSingleCustomer}
-                      className="w-full flex items-center justify-center py-3 px-4 border border-blue-500 rounded-md text-blue-600 hover:bg-blue-50 transition-colors"
-                    >
-                      <FaUserPlus className="mr-3 text-blue-500" />
-                      Add single customer
-                    </button>
+              {showAddOptions && (
+                <div className="absolute flex w-80 right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">Add Customer</h3>
+                    <p className="text-sm text-gray-600 mb-4">Add a customer by filling in the details below.</p>
 
-                    <button
-                      onClick={handleManageCustomersBulk}
-                      className="w-full flex items-center justify-center py-3 px-4 border border-blue-500 rounded-md text-blue-600 hover:bg-blue-50 transition-colors"
-                    >
-                      <FaUsers className="mr-3 text-blue-500" />
-                      Manage Customers in Bulk
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Search and filter bar */}
-      <div className="flex flex-wrap justify-between items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
-        <div className="relative flex-grow max-w-md">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FaSearch className="text-gray-400" />
-          </div>
-          <input
-            type="text"
-            placeholder="Search by customer name or phone"
-            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 w-full"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-
-        <div className="flex space-x-2 ">
-          <div className="relative filter-dropdown">
-            <button
-              className="flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md focus:outline-none hover:bg-gray-50 transition-colors"
-              onClick={() => setShowFilter(!showFilter)}
-            >
-              <FaFilter className="mr-2 text-gray-500 " />
-              Filter
-            </button>
-
-            {showFilter && (
-              <div className="fixed left-1/1.5 top-2/3 w-full max-w-[400px] -translate-x-1/2 -translate-y-1/2
-               rounded-lg bg-white p-6 z-50 space-y-6 shadow-2xl flex-col">
-                <div className="p-3 ">
-                  <h3 className="font-medium text-gray-700 mb-2 ">Filter by</h3>
-                  <div className="space-y-2">
-                    <div>
-                      <label className="block text-sm text-gray-600 mb-1">City</label>
-                      <select className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm">
-                        <option>Select City</option>
-                        <option>Vadodara</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm text-gray-600 mb-1">Added by</label>
-                      <select className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm">
-                        <option>Select creators</option>
-                        <option>HIREN BARIYA</option>
-                        <option>RAUNAKBHAI TANNA</option>
-                      </select>
-                    </div>
-                    {/* <div>
-                      <label className="block text-sm text-gray-600 mb-1">Date Range</label>
-                      <input type="date" className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm" />
-                    </div> */}
-                    <div className="flex justify-end space-x-2 pt-2">
-                      <button className="flex items-center gap-2 justify-center font-bold rounded-lg px-4 transition-all duration-100 ease-in-out bg-white text-blue-600 border border-blue-600 hover:bg-blue-50 focus:bg-blue-50 active:bg-blue-100 text-sm h-[38px] flex-1">
-                        Clear All
+                    <div className="space-y-2">
+                      <button
+                        onClick={handleAddSingleCustomer}
+                        className="w-full flex items-center justify-center py-3 px-4 border border-blue-500 rounded-md text-blue-600 hover:bg-blue-50 transition-colors"
+                      >
+                        <FaUserPlus className="mr-3 text-blue-500" />
+                        Add single customer
                       </button>
-                      <button className="flex items-center gap-2 justify-center font-bold rounded-lg px-4 transition-all duration-100 ease-in-out bg-blue-600 text-white border border-transparent hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-700 text-sm h-[38px] flex-1">
-                        Apply
+
+                      <button
+                        onClick={handleManageCustomersBulk}
+                        className="w-full flex items-center justify-center py-3 px-4 border border-blue-500 rounded-md text-blue-600 hover:bg-blue-50 transition-colors"
+                      >
+                        <FaUsers className="mr-3 text-blue-500" />
+                        Manage Customers in Bulk
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Search and filter bar */}
+        <div className="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <div className="relative flex-grow max-w-md">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <FaSearch className="text-gray-400" />
+            </div>
+            <input
+              type="text"
+              placeholder="Search by customer name or phone"
+              className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 w-full"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
 
-          <button className="flex items-center px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-            <FaDownload className="mr-2" />
-            Download
-          </button>
+          <div className="flex space-x-2">
+            <div className="relative filter-dropdown">
+              <button
+                className="flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md focus:outline-none hover:bg-gray-50 transition-colors"
+                onClick={() => setShowFilter(!showFilter)}
+              >
+                <FaFilter className="mr-2 text-gray-500" />
+                Filter
+              </button>
+
+              {showFilter && (
+                <div className="fixed left-1/1.5 top-2/3 w-full max-w-[400px] -translate-x-1/2 -translate-y-1/2
+                 rounded-lg bg-white p-6 z-50 space-y-6 shadow-2xl flex-col">
+                  <div className="p-3">
+                    <h3 className="font-medium text-gray-700 mb-2">Filter by</h3>
+                    <div className="space-y-2">
+                      <div>
+                        <label className="block text-sm text-gray-600 mb-1">City</label>
+                        <select className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm">
+                          <option>Select City</option>
+                          <option>Vadodara</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm text-gray-600 mb-1">Added by</label>
+                        <select className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm">
+                          <option>Select creators</option>
+                          <option>HIREN BARIYA</option>
+                          <option>RAUNAKBHAI TANNA</option>
+                        </select>
+                      </div>
+                      {/* <div>
+                        <label className="block text-sm text-gray-600 mb-1">Date Range</label>
+                        <input type="date" className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm" />
+                      </div> */}
+                      <div className="flex justify-end space-x-2 pt-2">
+                        <button className="flex items-center gap-2 justify-center font-bold rounded-lg px-4 transition-all duration-100 ease-in-out bg-white text-blue-600 border border-blue-600 hover:bg-blue-50 focus:bg-blue-50 active:bg-blue-100 text-sm h-[38px] flex-1">
+                          Clear All
+                        </button>
+                        <button className="flex items-center gap-2 justify-center font-bold rounded-lg px-4 transition-all duration-100 ease-in-out bg-blue-600 text-white border border-transparent hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-700 text-sm h-[38px] flex-1">
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <button className="flex items-center px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+              <FaDownload className="mr-2" />
+              Download
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Customers table */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
-        <div className="overflow-x-auto">
-          <div style={{ maxHeight: 'calc(100vh - 350px)', overflowY: 'auto' }}>
-            <table className="min-w-full divide-y divide-gray-200">
+      <div className="relative overflow-hidden">
+        <div className="w-full overflow-x-auto">
+          <div className="h-[calc(100vh-340px)] max-w-[1160px] overflow-y-auto">
+            <table className="w-full table-fixed divide-y divide-gray-200">
               <thead className="bg-gray-50 sticky top-0 z-10">
                 <tr>
-                  <th scope="col" className="px-3 py-3 text-left">
+                  <th scope="col" className="px-3 py-3 text-left" style={{ width: '40px' }}>
                     <input
                       type="checkbox"
                       className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
@@ -366,37 +367,37 @@ const CustomersList = () => {
                       checked={selectedCustomers.length === currentCustomers.length && currentCustomers.length > 0}
                     />
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '200px' }}>
                     Customer Name
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
                     Contact Name
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
                     Customer Number
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '200px' }}>
                     Address
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
                     Email ID
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
                     City
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '100px' }}>
                     Pincode
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
                     Added by
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
                     Added On
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
                     Visible to
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '80px' }}>
                     Actions
                   </th>
                 </tr>
@@ -468,115 +469,115 @@ const CustomersList = () => {
             </table>
           </div>
         </div>
+      </div>
 
-        {/* Pagination - now in a fixed position at the bottom */}
-        <div className="flex justify-between items-center px-4 py-3 bg-white border-t border-gray-200 sm:px-6 mt-auto">
-          <div className="flex items-center">
-            <span className="text-sm text-gray-700 mr-3">Rows Per Page</span>
-            <select
-              className="border border-gray-300 rounded-md text-sm px-2 py-1"
-              value={rowsPerPage}
-              onChange={(e) => setRowsPerPage(Number(e.target.value))}
-            >
-              <option value={10}>10</option>
-              <option value={25}>25</option>
-              <option value={50}>50</option>
-              <option value={100}>100</option>
-            </select>
-          </div>
+      {/* Pagination */}
+      <div className="flex justify-between items-center px-4 py-3 bg-white border-gray-200">
+        <div className="flex items-center">
+          <span className="text-sm text-gray-700 mr-3">Rows Per Page</span>
+          <select
+            className="border border-gray-300 rounded-md text-sm px-2 py-1"
+            value={rowsPerPage}
+            onChange={(e) => setRowsPerPage(Number(e.target.value))}
+          >
+            <option value={10}>10</option>
+            <option value={25}>25</option>
+            <option value={50}>50</option>
+            <option value={100}>100</option>
+          </select>
+        </div>
 
-          <div className="flex justify-between sm:hidden">
-            <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-              className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
-            >
-              Previous
-            </button>
-            <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-              disabled={currentPage === totalPages}
-              className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
-            >
-              Next
-            </button>
-          </div>
+        <div className="flex justify-between sm:hidden">
+          <button
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
 
-          <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-end">
-            <div>
-              <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                <button
-                  onClick={() => setCurrentPage(1)}
-                  disabled={currentPage === 1}
-                  className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
-                >
-                  <span className="sr-only">First</span>
-                  «
-                </button>
-                <button
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                  disabled={currentPage === 1}
-                  className="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
-                >
-                  <span className="sr-only">Previous</span>
-                  ‹
-                </button>
+        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-end">
+          <div>
+            <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+              <button
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+                className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
+              >
+                <span className="sr-only">First</span>
+                «
+              </button>
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
+              >
+                <span className="sr-only">Previous</span>
+                ‹
+              </button>
 
-                {/* Page numbers */}
-                {[...Array(totalPages)].map((_, i) => {
-                  const pageNumber = i + 1;
-                  // Show current page, first page, last page, and pages around current
-                  if (
-                    pageNumber === 1 ||
-                    pageNumber === totalPages ||
-                    (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
-                  ) {
-                    return (
-                      <button
-                        key={pageNumber}
-                        onClick={() => setCurrentPage(pageNumber)}
-                        className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${currentPage === pageNumber
-                          ? 'z-10 bg-blue-500 border-blue-500 text-blue-600'
-                          : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
-                          }`}
-                      >
-                        {pageNumber}
-                      </button>
-                    );
-                  } else if (
-                    pageNumber === currentPage - 2 ||
-                    pageNumber === currentPage + 2
-                  ) {
-                    return (
-                      <span
-                        key={pageNumber}
-                        className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
-                      >
-                        ...
-                      </span>
-                    );
-                  }
-                  return null;
-                })}
+              {/* Page numbers */}
+              {[...Array(totalPages)].map((_, i) => {
+                const pageNumber = i + 1;
+                // Show current page, first page, last page, and pages around current
+                if (
+                  pageNumber === 1 ||
+                  pageNumber === totalPages ||
+                  (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
+                ) {
+                  return (
+                    <button
+                      key={pageNumber}
+                      onClick={() => setCurrentPage(pageNumber)}
+                      className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${currentPage === pageNumber
+                        ? 'z-10 bg-blue-500 border-blue-500 text-blue-600'
+                        : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
+                        }`}
+                    >
+                      {pageNumber}
+                    </button>
+                  );
+                } else if (
+                  pageNumber === currentPage - 2 ||
+                  pageNumber === currentPage + 2
+                ) {
+                  return (
+                    <span
+                      key={pageNumber}
+                      className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
+                    >
+                      ...
+                    </span>
+                  );
+                }
+                return null;
+              })}
 
-                <button
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                  disabled={currentPage === totalPages}
-                  className="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
-                >
-                  <span className="sr-only">Next</span>
-                  ›
-                </button>
-                <button
-                  onClick={() => setCurrentPage(totalPages)}
-                  disabled={currentPage === totalPages}
-                  className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
-                >
-                  <span className="sr-only">Last</span>
-                  »
-                </button>
-              </nav>
-            </div>
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
+              >
+                <span className="sr-only">Next</span>
+                ›
+              </button>
+              <button
+                onClick={() => setCurrentPage(totalPages)}
+                disabled={currentPage === totalPages}
+                className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:opacity-50"
+              >
+                <span className="sr-only">Last</span>
+                »
+              </button>
+            </nav>
           </div>
         </div>
       </div>
