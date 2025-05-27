@@ -41,6 +41,14 @@ import StaffPermissions from './pages/geo/customers/StaffPermissions';
 import AddCustomer from './pages/geo/customers/AddCustomer';
 import ManageCustomersBulk from './pages/geo/customers/ManageCustomersBulk';
 
+// Import Orders components
+import OrdersLayout from './pages/geo/orders/OrdersLayout';
+import OrdersDashboard from './pages/geo/orders/OrdersDashboard';
+// import OrdersList from './pages/geo/orders/OrdersList';
+// import AddOrder from './pages/geo/orders/AddOrder';
+// import OrderDetails from './pages/geo/orders/OrderDetails';
+// import OrderSettindgs from './pages/geo/orders/OrderSettings';
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -210,6 +218,33 @@ export const router = createBrowserRouter([
             element: <ManageCustomersBulk />,
           },
           // Removed 'add-options' route
+        ],
+      },
+      // Orders routes
+      {
+        path: '/geo/orders',
+        element: <OrdersLayout />,
+        children: [
+          {
+            index: true,
+            element: <OrdersDashboard />,
+          },
+          // {
+          //   path: 'list',
+          //   element: <OrdersList />,
+          // },
+          // {
+          //   path: 'add',
+          //   element: <AddOrder />,
+          // },
+          // {
+          //   path: 'details/:id',
+          //   element: <OrderDetails />,
+          // },
+          // {
+          //   path: 'settings',
+          //   element: <OrderSettings />,
+          // },
         ],
       },
     ],
