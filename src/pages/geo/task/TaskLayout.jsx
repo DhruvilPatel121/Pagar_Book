@@ -1,14 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import CustomersHeader from './components/CustomersHeader';
+import TaskNav from './TaskNav';
 import GeoSidebar from '../components/GeoSidebar';
 
-function CustomersLayout() {
+function TaskLayout() {
   return (
     <>
       <GeoSidebar />
       <div className="ml-[250px] flex flex-col h-full">
-          <CustomersHeader />
+        <TaskNav />
+        {/* <div className="flex-1"> */}
         <div className="h-[calc(92vh-60px)] overflow-y-auto">
           <Outlet />
         </div>
@@ -17,4 +18,4 @@ function CustomersLayout() {
   );
 }
 
-export default CustomersLayout;
+export default TaskLayout
