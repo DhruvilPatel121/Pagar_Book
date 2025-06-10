@@ -9,7 +9,7 @@ function CustomersLayout() {
       <GeoSidebar />
       <div className="ml-[250px] flex flex-col h-full">
           <CustomersHeader />
-        <div className="h-[calc(92vh-60px)] overflow-y-auto">
+        <div className="h-full  overflow-y-auto">
           <Outlet />
         </div>
       </div>

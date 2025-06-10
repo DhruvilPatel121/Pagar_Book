@@ -63,7 +63,7 @@ const CustomersTemplate = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6 pb-24">
+    <div className="bg-white px-4 py-6">
       <button 
         onClick={() => navigate('/geo/customers/settings')} 
         className="flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors"
@@ -271,7 +271,7 @@ const CustomersTemplate = () => {
         )}
       </div>
 
-      <div className="fixed bottom-0 left-83 right-7 bg-white rounded-xl border-t border-gray-200 p-4 flex justify-end z-10">
+      <div className="fixed bottom-2 left-78 right-6 bg-white rounded-xl border-t border-gray-800 p-4 flex justify-end z-10">
         <div className="max-w-5xl w-full mx-auto flex justify-between">
           <button
             onClick={() => navigate('/geo/customers/settings')}

@@ -26,6 +26,20 @@ const CustomersServedSummary = () => {
     { name: 'shree om engineering', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
     { name: 'shree Ram industries', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '1 min', avgDuration: '0 min', totalForm: 0 },
     { name: 'yesh electric pvt ltd', taskCount: 1, avgTasksPerDay: 0.14, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'machine words', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'Baring manufacturing company', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'pratap engineering', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'capiq engineering pvt ltd', taskCount: 3, avgTasksPerDay: 0.43, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'shree om engineering', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'shree Ram industries', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '1 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'yesh electric pvt ltd', taskCount: 1, avgTasksPerDay: 0.14, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'machine words', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'Baring manufacturing company', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'pratap engineering', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'capiq engineering pvt ltd', taskCount: 3, avgTasksPerDay: 0.43, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'shree om engineering', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'shree Ram industries', taskCount: 2, avgTasksPerDay: 0.29, totalDuration: '1 min', avgDuration: '0 min', totalForm: 0 },
+    { name: 'yesh electric pvt ltd', taskCount: 1, avgTasksPerDay: 0.14, totalDuration: '0 min', avgDuration: '0 min', totalForm: 0 },
   ];
 
   // Filter customers based on search term
@@ -34,7 +48,7 @@ const CustomersServedSummary = () => {
   );
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
+    <div className="bg-white p-6 rounded-lg  shadow-sm">
       <div className="flex flex-col space-y-4">
         <div>
           <h2 className="text-xl font-semibold text-gray-800">Customers Served Summary</h2>
@@ -132,8 +146,8 @@ const CustomersServedSummary = () => {
         </div>
         
         {/* Table */}
-        <div className="overflow-x-auto mt-2 rounded-lg border border-gray-200">
-          <table className="min-w-full divide-y divide-gray-200">
+        <div className="overflow-x-auto mt-2 rounded-lg border h-[calc(100vh-340px)] border-gray-200">
+          <table className="min-w-full table-fixed divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

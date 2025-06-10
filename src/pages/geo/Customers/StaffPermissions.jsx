@@ -20,6 +20,11 @@ const StaffPermissions = () => {
     { id: 3, name: 'ARJUN PATEL', employeeId: '1042', phone: '9876543210', selected: false, category: 'Daily', department: 'Production', shift: 'PRODUCTION SHIFT' },
     { id: 4, name: 'RAHUL SHARMA', employeeId: '1044', phone: '8765432109', selected: false, category: 'Daily', department: 'Sales', shift: 'SALES SHIFT' },
     { id: 5, name: 'PRIYA PATEL', employeeId: '1046', phone: '7654321098', selected: false, category: 'Weekly', department: 'Unassigned', shift: 'PRODUCTION SHIFT' },
+     { id: 1, name: 'HIREN BARIYA', employeeId: '1038', phone: '7600767549', selected: true, category: 'Monthly', department: 'Production', shift: 'PRODUCTION SHIFT' },
+    { id: 2, name: 'RAUNAKBHAI TANNA', employeeId: '1035', phone: '8401258397', selected: true, category: 'Monthly', department: 'Sales', shift: 'SALES SHIFT' },
+    { id: 3, name: 'ARJUN PATEL', employeeId: '1042', phone: '9876543210', selected: false, category: 'Daily', department: 'Production', shift: 'PRODUCTION SHIFT' },
+    { id: 4, name: 'RAHUL SHARMA', employeeId: '1044', phone: '8765432109', selected: false, category: 'Daily', department: 'Sales', shift: 'SALES SHIFT' },
+    { id: 5, name: 'PRIYA PATEL', employeeId: '1046', phone: '7654321098', selected: false, category: 'Weekly', department: 'Unassigned', shift: 'PRODUCTION SHIFT' },
   ]);
 
   // Handle selection mode change
@@ -88,7 +93,7 @@ const StaffPermissions = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6 pb-24">
+    <div className=" bg-white rounded-lg px-4 py-6 pb-2">
       <button 
         onClick={() => navigate('/geo/customers/settings')} 
         className="flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors"
@@ -184,7 +189,7 @@ const StaffPermissions = () => {
           </div>
 
           {/* Table Content */}
-          <div className="max-h-[calc(100vh-400px)] overflow-y-auto">
+          <div className="max-h-[calc(100vh-550px)] rounded-lg overflow-y-auto">
             {Object.entries(groupedStaff).length > 0 ? (
               Object.entries(groupedStaff).map(([category, staffs]) => (
                 <div key={category}>
@@ -357,7 +362,7 @@ const StaffPermissions = () => {
       )}
 
       {/* Save Button */}
-      <div className="fixed bottom-0 left-83 right-7 bg-white rounded-xl border-t border-gray-200 p-4 flex justify-end z-10">
+      <div className="fixed bottom-3 left-78 right-6 bg-white rounded-xl border-t border-gray-200 p-4 flex justify-end z-10">
         <div className="flex items-center justify-between w-full">
           <div className="text-sm text-gray-600">
             {staffList.filter(s => s.selected).length} staff members selected

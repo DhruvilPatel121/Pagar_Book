@@ -44,13 +44,13 @@ import CustomersList from './pages/geo/customers/CustomersList';
 import CustomersSettings from './pages/geo/customers/CustomersSettings';
 import CustomersTemplate from './pages/geo/customers/CustomersTemplate';
 import StaffPermissions from './pages/geo/customers/StaffPermissions';
-import AddCustomer from './pages/geo/customers/AddCustomer';
+// import AddCustomer from './pages/geo/customers/AddCustomer';
 import ManageCustomersBulk from './pages/geo/customers/ManageCustomersBulk';
 
 
 // Import Orders components
-// import OrdersLayout from './pages/geo/orders/OrdersLayout';
-// import OrdersDashboard from './pages/geo/orders/OrdersDashboard';
+import OrdersLayout from './pages/geo/orders/OrdersLayout';
+import OrdersDashboard from './pages/geo/orders/OrdersDashboard';
 // import OrdersList from './pages/geo/orders/OrdersList';
 // import AddOrder from './pages/geo/orders/AddOrder';
 // import OrderDetails from './pages/geo/orders/OrderDetails';
@@ -256,10 +256,10 @@ export const router = createBrowserRouter([
             path: 'staff-permissions',
             element: <StaffPermissions />,
           },
-          {
-            path: 'add',
-            element: <AddCustomer />,
-          },
+          // {
+          //   path: 'add',
+          //   element: <AddCustomer />,
+          // },
           {
             path: 'bulk',
             element: <ManageCustomersBulk />,
@@ -267,14 +267,14 @@ export const router = createBrowserRouter([
         ],
       },
       // Orders routes
-      // {
-      //   path: '/geo/orders',
-      //   element: <OrdersLayout />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <OrdersDashboard />,
-      //     },
+      {
+        path: '/geo/orders',
+        element: <OrdersLayout />,
+        children: [
+          {
+            index: true,
+            element: <OrdersDashboard />,
+          },
           // {
           //   path: 'list',
           //   element: <OrdersList />,

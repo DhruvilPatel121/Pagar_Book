@@ -18,65 +18,73 @@ const AssignTask = () => {
   const [selectedTask, setSelectedTask] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
-  status: '',
-  staff: ''
-});
+    status: '',
+    staff: ''
+  });
 
   // Sample staff data - replace with your actual data
   const staffList = [
-    { id: '1038', name: 'HIREN BARIYA', image: '/path/to/image', tasks: [
-      { time: '10:13 AM - 10:13 AM', status: 'DONE' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' },
-      { time: '10:13 AM - 10:13 AM', status: 'DONE' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' }
-    ]},
-    { id: '1035', name: 'RAUNAKBHAI TANNA', image: '/path/to/image', tasks: [
-      { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
-      { time: '12:13 PM - 12:13 PM', status: 'PENDING' },
-      { time: '12:45 PM - 12:46 PM', status: 'PENDING' },
-      { time: '10:13 AM - 10:13 AM', status: 'DONE' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' }
-    ]},
-    { id: '1039', name: 'RAJ KAMANI', image: '/path/to/image', tasks: [
-      { time: '10:13 AM - 10:13 AM', status: 'DONE' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' },
-      { time: '10:13 AM - 10:13 AM', status: 'DONE' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' }
-    ]},
-    { id: '1040', name: 'PANKAJ PATADIYA', image: '/path/to/image', tasks: [
-      { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
-      { time: '12:13 PM - 12:13 PM', status: 'PENDING' },
-      { time: '12:45 PM - 12:46 PM', status: 'PENDING' },
-      { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
-      { time: '12:13 PM - 12:13 PM', status: 'DONE' },
-      { time: '12:45 PM - 12:46 PM', status: 'DONE' }
-    ]},
+    {
+      id: '1038', name: 'HIREN BARIYA', image: '/path/to/image', tasks: [
+        { time: '10:13 AM - 10:13 AM', status: 'DONE' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' },
+        { time: '10:13 AM - 10:13 AM', status: 'DONE' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' }
+      ]
+    },
+    {
+      id: '1035', name: 'RAUNAKBHAI TANNA', image: '/path/to/image', tasks: [
+        { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
+        { time: '12:13 PM - 12:13 PM', status: 'PENDING' },
+        { time: '12:45 PM - 12:46 PM', status: 'PENDING' },
+        { time: '10:13 AM - 10:13 AM', status: 'DONE' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' }
+      ]
+    },
+    {
+      id: '1039', name: 'RAJ KAMANI', image: '/path/to/image', tasks: [
+        { time: '10:13 AM - 10:13 AM', status: 'DONE' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' },
+        { time: '10:13 AM - 10:13 AM', status: 'DONE' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' }
+      ]
+    },
+    {
+      id: '1040', name: 'PANKAJ PATADIYA', image: '/path/to/image', tasks: [
+        { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
+        { time: '12:13 PM - 12:13 PM', status: 'PENDING' },
+        { time: '12:45 PM - 12:46 PM', status: 'PENDING' },
+        { time: '10:13 AM - 10:13 AM', status: 'PENDING' },
+        { time: '12:13 PM - 12:13 PM', status: 'DONE' },
+        { time: '12:45 PM - 12:46 PM', status: 'DONE' }
+      ]
+    },
   ];
 
   const formatDate = (date) => {
-  return date.toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric'
-  });
-};
+    return date.toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    });
+  };
 
   const handlePrevDate = () => {
-  const newDate = new Date(selectedDate);
-  newDate.setDate(newDate.getDate() - 1);
-  setSelectedDate(newDate);
-};
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() - 1);
+    setSelectedDate(newDate);
+  };
 
-const handleNextDate = () => {
-  const newDate = new Date(selectedDate);
-  newDate.setDate(newDate.getDate() + 1);
-  setSelectedDate(newDate);
-};
+  const handleNextDate = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() + 1);
+    setSelectedDate(newDate);
+  };
 
   const handleDateSelect = (date) => {
     setSelectedDate(date);
@@ -107,7 +115,7 @@ const handleNextDate = () => {
       }
       return staff;
     });
-    
+
     // Update your state or make API call here
     // setStaffList(updatedStaffList);
     setShowAddTask(false);
@@ -134,42 +142,42 @@ const handleNextDate = () => {
 
   // Add filter handling function
   const handleApplyFilters = (filters) => {
-  setActiveFilters(filters);
-};
+    setActiveFilters(filters);
+  };
 
   const filteredStaffList = staffList.filter(staff => {
-  // Search filter
-  if (searchQuery && 
-      !staff.name.toLowerCase().includes(searchQuery.toLowerCase()) && 
+    // Search filter
+    if (searchQuery &&
+      !staff.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
       !staff.id.includes(searchQuery)) {
-    return false;
-  }
-  
-  // Existing filter logic
-  if (activeFilters.staff && staff.id !== activeFilters.staff) {
-    return false;
-  }
-  
-  if (activeFilters.status) {
-    const hasMatchingTask = staff.tasks.some(task => task.status === activeFilters.status);
-    if (!hasMatchingTask) {
       return false;
     }
-  }
-  
-  return true;
-}).map(staff => ({
-  ...staff,
-  tasks: activeFilters.status 
-    ? staff.tasks.filter(task => task.status === activeFilters.status)
-    : staff.tasks
-}));
+
+    // Existing filter logic
+    if (activeFilters.staff && staff.id !== activeFilters.staff) {
+      return false;
+    }
+
+    if (activeFilters.status) {
+      const hasMatchingTask = staff.tasks.some(task => task.status === activeFilters.status);
+      if (!hasMatchingTask) {
+        return false;
+      }
+    }
+
+    return true;
+  }).map(staff => ({
+    ...staff,
+    tasks: activeFilters.status
+      ? staff.tasks.filter(task => task.status === activeFilters.status)
+      : staff.tasks
+  }));
 
   // Add this useEffect for handling outside clicks
   useEffect(() => {
     function handleClickOutside(event) {
-      if (calendarRef.current && !calendarRef.current.contains(event.target) && 
-          !event.target.closest('[data-calendar-toggle]')) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target) &&
+        !event.target.closest('[data-calendar-toggle]')) {
         setShowCalendar(false);
       }
     }
@@ -177,76 +185,81 @@ const handleNextDate = () => {
     if (showCalendar) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-    }, [showCalendar]);
+  }, [showCalendar]);
 
   return (
     <div className="relative">
       <div className={showAddTask ? 'pointer-events-none' : ''}>
-        <div className={`p-4 bg-white rounded-lg shadow-sm ${showAddTask ? 'blur-sm' : ''}`}>
-          <h1 className="text-xl font-semibold mb-2">Assign Task</h1>
-          <p className="text-gray-600 mb-6">
-            Assign tasks to your employees. You can choose to add tasks one by one, or add them in bulk using our Excel template.
-          </p>
-  
-          <div className="flex items-center justify-between gap-4 mb-6">
-            <div className="flex flex-1 max-w-md justify-between gap-3">
-              <div className="relative w-full">
-                <input
-                  type="text"
-                  placeholder="Search by name or staff ID"
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <div className={`bg-white rounded-lg shadow-sm ${showAddTask ? 'blur-sm' : ''}`}> {/* Removed p-4 from here */}
+          {/* This entire block will be sticky */}
+          <div className="sticky top-0 z-20 bg-white p-4 shadow-sm"> {/* Added sticky, p-4, and shadow-sm for visual separation */}
+            <h1 className="text-xl font-semibold mb-2">Assign Task</h1>
+            <p className="text-gray-600 mb-6">
+              Assign tasks to your employees. You can choose to add tasks one by one, or add them in bulk using our Excel template.
+            </p>
+
+            {/* The search/filter/date bar is now inside the main sticky div */}
+            <div className="flex items-center justify-between gap-4"> {/* Removed sticky classes and mb-6 from here */}
+              <div className="flex flex-1 max-w-md justify-between gap-3">
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    placeholder="Search by name or staff ID"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                  <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                </div>
+                <button className="flex items-center px-4 py-2.5 text-blue-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer" onClick={() => setShowFilter(true)}>
+                  <FaFilter className="mr-2" />
+                  Filter
+                </button>
               </div>
-              <button className="flex items-center px-4 py-2.5 text-blue-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer" onClick={() => setShowFilter(true)}>
-                <FaFilter className="mr-2" />
-                Filter
-              </button>
+
+              <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden relative">
+                <div className="flex items-center border border-gray-200 rounded-lg">
+                  <button className="p-2.5 hover:bg-gray-50 text-gray-500 transition-colors"
+                    onClick={handlePrevDate}><IoChevronBack size={18} />
+                  </button>
+                  <span className="px-3 py-2 font-medium">{formatDate(selectedDate)}</span>
+                  <button className="p-2.5 hover:bg-gray-50 text-gray-500 transition-colors"
+                    onClick={handleNextDate}><IoChevronForward size={18} />
+                  </button>
+                  <button className="p-2.5 hover:bg-gray-50 text-blue-500 border-l transition-colors cursor-pointer"
+                    onClick={() => setShowCalendar(!showCalendar)}
+                    data-calendar-toggle><FaCalendarAlt size={16} />
+                  </button>
+                </div>
+
+                <button className="flex items-center px-4 py-2.5 text-white bg-blue-600 rounded-lg hover:bg-blue-700 cursor-pointer">
+                  <FaDownload className="mr-2" />
+                  Bulk Upload
+                </button>
+              </div>
+              {showCalendar && (
+                <div className="absolute top-full right-20 mt-2 z-50" ref={calendarRef}> {/* Adjusted top positioning for calendar */}
+                  <Calendar
+                    selectedDate={selectedDate}
+                    onSelect={handleDateSelect}
+                    onClose={() => setShowCalendar(false)}
+                  />
+                </div>
+              )}
             </div>
-  
-            <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden relative">  
-              <div className="flex items-center border border-gray-200 rounded-lg">
-                <button className="p-2.5 hover:bg-gray-50 text-gray-500 transition-colors"
-                   onClick={handlePrevDate}><IoChevronBack size={18} />
-                </button>
-                <span className="px-3 py-2 font-medium">{formatDate(selectedDate)}</span>
-                <button className="p-2.5 hover:bg-gray-50 text-gray-500 transition-colors"
-                  onClick={handleNextDate}><IoChevronForward size={18} />
-                </button>
-                <button className="p-2.5 hover:bg-gray-50 text-blue-500 border-l transition-colors cursor-pointer"
-                  onClick={() => setShowCalendar(!showCalendar)}
-                  data-calendar-toggle><FaCalendarAlt size={16} />
-                </button>
-              </div>
-  
-              <button className="flex items-center px-4 py-2.5 text-white bg-blue-600 rounded-lg hover:bg-blue-700 cursor-pointer">
-                <FaDownload className="mr-2" />
-                Bulk Upload
-              </button>
-            </div>
-            {showCalendar && (
-              <div className="absolute top-40 right-20 z-50" ref={calendarRef}>
-                <Calendar
-                  selectedDate={selectedDate}
-                  onSelect={handleDateSelect}
-                  onClose={() => setShowCalendar(false)}
-                />
-              </div>
-            )}
           </div>
-  
-  
-          <div className="space-y-4 max-h-[480px] overflow-y-auto">
+
+          {/* This div will contain the scrollable content */}
+          <div className="p-4 space-y-4 max-h-[calc(100vh-250px)] overflow-y-auto"> {/* Added p-4, max-height and overflow for scrolling */}
             {filteredStaffList.length > 0 ? (
               filteredStaffList.map((staff) => (
-                <div key={staff.id} className="flex bg-white rounded-lg border border-gray-100">
-                  <div className="w-[200px] min-w-[200px] p-4 flex items-center gap-3 border-r border-gray-100">
+                <div key={staff.id} className="flex left-0 z-10">
+                  {/* Staff Info - Made Sticky */}
+                  <div className="sticky left-0 z-10 w-[250px] min-w-[250px] flex-shrink-0 p-4 flex items-center gap-3 border-r border-gray-100 bg-white">
                     <img
                       src={staff.image || "https://via.placeholder.com/40"}
                       alt={staff.name}
@@ -256,17 +269,19 @@ const handleNextDate = () => {
                       <div className="font-medium text-gray-900">{staff.name}</div>
                       <div className="text-sm text-gray-500">#{staff.id}</div>
                     </div>
+                    <button 
+                      className="w-8 h-8 text-blue-600 hover:bg-blue-50 rounded-lg flex items-center justify-center cursor-pointer"
+                      onClick={() => handleAddTask(staff)}
+                    >
+                      <FaPlus size={16} />
+                    </button>
                   </div>
-  
-                  <div className="flex-1 p-4 flex items-center space-x-3">
-                    <div className="flex-shrink-0 pl-4">
-                      <button className="w-8 h-8 text-blue-600 hover:bg-blue-50 rounded-lg flex items-center justify-center cursor-pointer"
-                        onClick={() => handleAddTask(staff)}>
-                        <FaPlus size={16} />
-                      </button>
-                    </div>
+
+                  {/* Tasks Section */}
+                  <div className="flex flex-1 items-center p-4 space-x-3"> {/* Ensured this container allows its child to overflow */}
+
                     <div className="flex-1">
-                      <div className="flex max-w-[850px] gap-4 overflow-x-auto py-2 px-1">
+                      <div className="flex max-w-[850px] gap-4 overflow-x-visble py-2 px-1">
                         {staff.tasks.map((task, index) => (
                           <div key={index} className="flex-shrink-0 p-3 bg-green-50 rounded-lg border border-green-100 w-[280px]">
                             <div className="flex items-center gap-2 mb-3">
@@ -306,9 +321,9 @@ const handleNextDate = () => {
               ))
             ) : (
               <div className="flex flex-col items-center justify-center py-12 px-4 bg-gray-50 rounded-lg border border-gray-100">
-                <img 
-                  src="/assets/images/no-results.svg" 
-                  alt="No results" 
+                <img
+                  src="/assets/images/no-results.svg"
+                  alt="No results"
                   className="w-32 h-32 mb-4 opacity-60"
                   onError={(e) => {
                     e.target.onerror = null;
@@ -317,11 +332,11 @@ const handleNextDate = () => {
                 />
                 <h3 className="text-lg font-medium text-gray-700 mb-1">No results found</h3>
                 <p className="text-gray-500 text-center max-w-md">
-                  {searchQuery ? 
-                    `No staff matching "${searchQuery}" were found.` : 
+                  {searchQuery ?
+                    `No staff matching "${searchQuery}" were found.` :
                     'No staff matching the selected filters were found.'}
                 </p>
-                <button 
+                <button
                   onClick={() => {
                     setSearchQuery('');
                     setActiveFilters({ status: '', staff: '' });

@@ -163,7 +163,7 @@ const FormTemplateEditor = () => {
   return (
     <div className="flex h-screen overflow-hidden">
       <GeoSidebar />
-      <div className="ml-[230px] w-[calc(100%-250px)] flex flex-col h-screen overflow-hidden">
+      <div className="ml-[230px] w-full flex flex-col h-screen overflow-hidden">
         <div className={`bg-white ${borders.roundedLg} ${effects.shadowSm} m-6 flex flex-col flex-1 overflow-hidden`}>
           {/* Use FormsHeader component */}
           <FormsHeader />

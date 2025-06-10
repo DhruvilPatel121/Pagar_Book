@@ -50,7 +50,7 @@ const ManageCustomersBulk = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
+    <div className="mx-auto px-4 py-6 bg-white">
       <div className="flex items-center mb-6">
         <button 
           onClick={() => navigate('/geo/customers')} 
@@ -63,22 +63,22 @@ const ManageCustomersBulk = () => {
       <h1 className="text-2xl font-bold text-gray-800 mb-8">Manage Customers in Bulk</h1>
 
       <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <div className="border border-gray-200 rounded-lg p-4 flex flex-col items-center">
+        <div className="border border-gray-300 rounded-lg p-4 bg-white flex flex-col items-center">
           <div className="text-gray-500 font-medium mb-2">01.</div>
           <h3 className="font-medium text-gray-800 mb-1">Manage customer staff mapping</h3>
         </div>
 
-        <div className="border border-gray-200 rounded-lg p-4 flex flex-col items-center">
+        <div className="border border-gray-300 rounded-lg p-4 flex bg-white flex-col items-center">
           <div className="text-gray-500 font-medium mb-2">02.</div>
           <h3 className="font-medium text-gray-800 mb-1">Add more customers in bulk</h3>
         </div>
 
-        <div className="border border-gray-200 rounded-lg p-4 flex flex-col items-center">
+        <div className="border border-gray-300 rounded-lg p-4 flex flex-col bg-white items-center">
           <div className="text-gray-500 font-medium mb-2">03.</div>
           <h3 className="font-medium text-gray-800 mb-1">Bulk remove customers</h3>
         </div>
 
-        <div className="border border-gray-200 rounded-lg p-4 flex flex-col items-center">
+        <div className="border border-gray-300 rounded-lg p-4 flex flex-col bg-white items-center">
           <div className="text-gray-500 font-medium mb-2">04.</div>
           <h3 className="font-medium text-gray-800 mb-1">Bulk edit customer details</h3>
         </div>

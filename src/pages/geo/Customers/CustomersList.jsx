@@ -117,6 +117,318 @@ const CustomersList = () => {
       addedOn: '17 May, 2025',
       visibleTo: 'RAUNAKBHAI TANNA'
     },
+    {
+        id: 1,
+        name: 'nutan engineering industry',
+        contactName: 'bakul patel',
+        number: '+91 8155069928',
+        address: '123, OCEL Rd, Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 2,
+        name: 'bhagwati spring manufacturing',
+        contactName: 'jigar patel',
+        number: '+91 9737497630',
+        address: 'A2-620/1, INDUSTRIAL...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 3,
+        name: 'hariome spring industries',
+        contactName: 'divy patel',
+        number: '+91 8866197604',
+        address: '496/6, G.I.D.C, Maka...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 4,
+        name: 'acme electronic',
+        contactName: 'acme',
+        number: '+91 8238008788',
+        address: '780 C-1, Makarpura G...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 5,
+        name: 'Accurate engineering',
+        contactName: 'surendrashing',
+        number: '+91 9898240294',
+        address: '691/A, S KUMAR ENGIN...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 6,
+        name: 'solitaire machine tools',
+        contactName: 'smt',
+        number: '+91 9099440114',
+        address: 'Krishna Industrial E...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 7,
+        name: 'Frank industries corporation',
+        contactName: 'naresh sir',
+        number: '+91 9426313113',
+        address: 'Prakash House, Gorwa...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 8,
+        name: 'Makarpura GIDC',
+        contactName: 'TANNA',
+        number: '+91 9426313114',
+        address: 'Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'RAUNAKBHAI TANNA',
+        addedOn: '17 May, 2025',
+        visibleTo: 'RAUNAKBHAI TANNA'
+      },
+      {
+        id: 1,
+        name: 'nutan engineering industry',
+        contactName: 'bakul patel',
+        number: '+91 8155069928',
+        address: '123, OCEL Rd, Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 2,
+        name: 'bhagwati spring manufacturing',
+        contactName: 'jigar patel',
+        number: '+91 9737497630',
+        address: 'A2-620/1, INDUSTRIAL...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 3,
+        name: 'hariome spring industries',
+        contactName: 'divy patel',
+        number: '+91 8866197604',
+        address: '496/6, G.I.D.C, Maka...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 4,
+        name: 'acme electronic',
+        contactName: 'acme',
+        number: '+91 8238008788',
+        address: '780 C-1, Makarpura G...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 5,
+        name: 'Accurate engineering',
+        contactName: 'surendrashing',
+        number: '+91 9898240294',
+        address: '691/A, S KUMAR ENGIN...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 6,
+        name: 'solitaire machine tools',
+        contactName: 'smt',
+        number: '+91 9099440114',
+        address: 'Krishna Industrial E...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 7,
+        name: 'Frank industries corporation',
+        contactName: 'naresh sir',
+        number: '+91 9426313113',
+        address: 'Prakash House, Gorwa...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 8,
+        name: 'Makarpura GIDC',
+        contactName: 'TANNA',
+        number: '+91 9426313114',
+        address: 'Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'RAUNAKBHAI TANNA',
+        addedOn: '17 May, 2025',
+        visibleTo: 'RAUNAKBHAI TANNA'
+      },
+      {
+        id: 1,
+        name: 'nutan engineering industry',
+        contactName: 'bakul patel',
+        number: '+91 8155069928',
+        address: '123, OCEL Rd, Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 2,
+        name: 'bhagwati spring manufacturing',
+        contactName: 'jigar patel',
+        number: '+91 9737497630',
+        address: 'A2-620/1, INDUSTRIAL...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 3,
+        name: 'hariome spring industries',
+        contactName: 'divy patel',
+        number: '+91 8866197604',
+        address: '496/6, G.I.D.C, Maka...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 4,
+        name: 'acme electronic',
+        contactName: 'acme',
+        number: '+91 8238008788',
+        address: '780 C-1, Makarpura G...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390011',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 5,
+        name: 'Accurate engineering',
+        contactName: 'surendrashing',
+        number: '+91 9898240294',
+        address: '691/A, S KUMAR ENGIN...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390013',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '22 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 6,
+        name: 'solitaire machine tools',
+        contactName: 'smt',
+        number: '+91 9099440114',
+        address: 'Krishna Industrial E...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 7,
+        name: 'Frank industries corporation',
+        contactName: 'naresh sir',
+        number: '+91 9426313113',
+        address: 'Prakash House, Gorwa...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390003',
+        addedBy: 'HIREN BARIYA',
+        addedOn: '21 May, 2025',
+        visibleTo: 'HIREN BARIYA'
+      },
+      {
+        id: 8,
+        name: 'Makarpura GIDC',
+        contactName: 'TANNA',
+        number: '+91 9426313114',
+        address: 'Makarpura GIDC...',
+        email: '-',
+        city: 'Vadodara',
+        pincode: '390014',
+        addedBy: 'RAUNAKBHAI TANNA',
+        addedOn: '17 May, 2025',
+        visibleTo: 'RAUNAKBHAI TANNA'
+      },
   ]);
 
   // Handle edit customer - navigate to edit page
@@ -326,10 +638,6 @@ const CustomersList = () => {
                           <option>RAUNAKBHAI TANNA</option>
                         </select>
                       </div>
-                      {/* <div>
-                        <label className="block text-sm text-gray-600 mb-1">Date Range</label>
-                        <input type="date" className="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm" />
-                      </div> */}
                       <div className="flex justify-end space-x-2 pt-2">
                         <button className="flex items-center gap-2 justify-center font-bold rounded-lg px-4 transition-all duration-100 ease-in-out bg-white text-blue-600 border border-blue-600 hover:bg-blue-50 focus:bg-blue-50 active:bg-blue-100 text-sm h-[38px] flex-1">
                           Clear All
@@ -353,9 +661,9 @@ const CustomersList = () => {
       </div>
 
       {/* Customers table */}
-      <div className="relative overflow-hidden">
+      <div className="overflow-hidden">
         <div className="w-full overflow-x-auto">
-          <div className="h-[calc(100vh-340px)] max-w-[1160px] overflow-y-auto">
+          <div className="h-[calc(100vh-340px)] lg:max-w-[calc(150vh-1px)] overflow-x-visible ">
             <table className="w-full table-fixed divide-y divide-gray-200">
               <thead className="bg-gray-50 sticky top-0 z-10">
                 <tr>
@@ -367,37 +675,37 @@ const CustomersList = () => {
                       checked={selectedCustomers.length === currentCustomers.length && currentCustomers.length > 0}
                     />
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '200px' }}>
+                  <th scope="col" className="w-[250px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Customer Name
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
+                  <th scope="col" className="w-[150px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Contact Name
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
+                  <th scope="col" className="w-[150px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Customer Number
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '200px' }}>
+                  <th scope="col" className="w-[250px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Address
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '150px' }}>
+                  <th scope="col" className="w-[200px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Email ID
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
+                  <th scope="col" className="w-[120px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     City
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '100px' }}>
+                  <th scope="col" className="w-[100px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Pincode
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
+                  <th scope="col" className="w-[140px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Added by
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
+                  <th scope="col" className="w-[120px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Added On
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '120px' }}>
+                  <th scope="col" className="w-[140px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Visible to
                   </th>
-                  <th scope="col" className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{ width: '80px' }}>
+                  <th scope="col" className="w-[90px] px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>

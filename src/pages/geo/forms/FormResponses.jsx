@@ -83,6 +83,123 @@ const FormResponses = () => {
             companyName: 'Kumar Industries',
             nextCallDate: '2025-06-05',
             contact: '+91 9876543212'
+          },
+          {
+            id: '1',
+            respondent: 'John Doe',
+            taskId: 'T-1001',
+            location: 'Mumbai, Maharashtra',
+            timestamp: '2025-05-20T09:30:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'Retail',
+            companyName: 'ABC Retail Ltd',
+            nextCallDate: '2025-06-15',
+            contact: '+91 9876543210'
+          },
+          {
+            id: '2',
+            respondent: 'Jane Smith',
+            taskId: 'T-1002',
+            location: 'Delhi, Delhi',
+            timestamp: '2025-05-20T10:15:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'IT',
+            companyName: 'Tech Solutions Inc',
+            nextCallDate: '2025-06-10',
+            contact: '+91 9876543211'
+          },
+          {
+            id: '3',
+            respondent: 'Raj Kumar',
+            taskId: 'T-1003',
+            location: 'Bangalore, Karnataka',
+            timestamp: '2025-05-20T11:45:00Z',
+            status: 'Pending',
+            customerVisit: 'No',
+            industryType: 'Manufacturing',
+            companyName: 'Kumar Industries',
+            nextCallDate: '2025-06-05',
+            contact: '+91 9876543212'
+          },
+          {
+            id: '1',
+            respondent: 'John Doe',
+            taskId: 'T-1001',
+            location: 'Mumbai, Maharashtra',
+            timestamp: '2025-05-20T09:30:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'Retail',
+            companyName: 'ABC Retail Ltd',
+            nextCallDate: '2025-06-15',
+            contact: '+91 9876543210'
+          },
+          {
+            id: '2',
+            respondent: 'Jane Smith',
+            taskId: 'T-1002',
+            location: 'Delhi, Delhi',
+            timestamp: '2025-05-20T10:15:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'IT',
+            companyName: 'Tech Solutions Inc',
+            nextCallDate: '2025-06-10',
+            contact: '+91 9876543211'
+          },
+          {
+            id: '3',
+            respondent: 'Raj Kumar',
+            taskId: 'T-1003',
+            location: 'Bangalore, Karnataka',
+            timestamp: '2025-05-20T11:45:00Z',
+            status: 'Pending',
+            customerVisit: 'No',
+            industryType: 'Manufacturing',
+            companyName: 'Kumar Industries',
+            nextCallDate: '2025-06-05',
+            contact: '+91 9876543212'
+          },
+          {
+            id: '1',
+            respondent: 'John Doe',
+            taskId: 'T-1001',
+            location: 'Mumbai, Maharashtra',
+            timestamp: '2025-05-20T09:30:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'Retail',
+            companyName: 'ABC Retail Ltd',
+            nextCallDate: '2025-06-15',
+            contact: '+91 9876543210'
+          },
+          {
+            id: '2',
+            respondent: 'Jane Smith',
+            taskId: 'T-1002',
+            location: 'Delhi, Delhi',
+            timestamp: '2025-05-20T10:15:00Z',
+            status: 'Completed',
+            customerVisit: 'Yes',
+            industryType: 'IT',
+            companyName: 'Tech Solutions Inc',
+            nextCallDate: '2025-06-10',
+            contact: '+91 9876543211'
+          },
+          {
+            id: '3',
+            respondent: 'Raj Kumar',
+            taskId: 'T-1003',
+            location: 'Bangalore, Karnataka',
+            timestamp: '2025-05-20T11:45:00Z',
+            status: 'Pending',
+            customerVisit: 'No',
+            industryType: 'Manufacturing',
+            companyName: 'Kumar Industries',
+            nextCallDate: '2025-06-05',
+            contact: '+91 9876543212'
           }
         ];
         
@@ -258,13 +375,13 @@ const FormResponses = () => {
   return (
     <div className="flex h-screen overflow-hidden">
       <GeoSidebar />
-      <div className="ml-[230px] w-[1050px] flex flex-col h-screen overflow-hidden">
+      <div className="ml-[230px] w-full flex flex-col h-screen overflow-hidden">
         <div className="bg-white rounded-lg shadow-sm m-6 flex flex-col flex-1 overflow-hidden">
           {/* Use FormsHeader component */}
           <FormsHeader />
 
           {/* Content */}
-          <div className="p-6 flex flex-col flex-1 overflow-hidden">
+          <div className="p-6 flex flex-col flex-1 overflow-auto">
             <h2 className="text-xl font-medium text-gray-800 mb-2">Forms</h2>
             <p className="text-gray-600 mb-6">See form responses of forms filled by staff while completing a task.</p>
             
@@ -275,7 +392,7 @@ const FormResponses = () => {
                   placeholder="Search by staff name or task ID"
                   className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 w-full"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => setSearchTerm(e.target.value)}r
                 />
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               </div>
@@ -324,41 +441,41 @@ const FormResponses = () => {
               </div>
             </div>
             
-            <div className="border border-gray-200 rounded-md flex-1 overflow-hidden">
+            <div className="border border-gray-200 rounded-md flex-1">
               {loading ? (
                 <div className="flex justify-center items-center p-8 h-full">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
                 </div>
               ) : (
-                <div className="overflow-auto max-h-[calc(100vh-320px)]">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50 sticky top-0 z-10">
+                <div className="overflow-x-auto max-h-[calc(100vh-320px)]">
+                  <table className="w-full table-fixed divide-y divide-gray-200">
+                    <thead className="bg-gray-50  gap-3 top-0 z-10">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Name
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Task ID
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Address
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Customer Visit
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Status
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Industry Type
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Company Name
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Next Call or Visit Date
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Contact
                         </th>
                       </tr>
@@ -373,8 +490,8 @@ const FormResponses = () => {
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-500">{response.taskId}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm text-gray-500">{response.location}</div>
+                            <td className="px-6 py-4 whitespace-wrap">
+                              <div className="text-sm  text-gray-500">{response.location}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-500">{response.customerVisit}</div>
@@ -389,13 +506,13 @@ const FormResponses = () => {
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-500">{response.industryType}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-6 py-4 whitespace-wrap">
                               <div className="text-sm text-gray-500">{response.companyName}</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="text-sm text-gray-500">{formatDate(response.nextCallDate)}</div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-6 py-4 whitespace-wrap">
                               <div className="text-sm text-gray-500">{response.contact}</div>
                             </td>
                           </tr>
